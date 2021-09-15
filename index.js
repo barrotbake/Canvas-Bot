@@ -1,3 +1,7 @@
+/*
+This file will get the announcement message off of our 362 Class and package.json will show the dependencies. 
+You will need to use your own access token in the "authorization" property
+*/
 import express, { json } from 'express';
 import fetch from 'node-fetch';
 import http from 'http';
