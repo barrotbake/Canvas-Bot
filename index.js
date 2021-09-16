@@ -23,7 +23,7 @@ var obj =  `course_3323790`;
 var course = `3323790`;
 var data = '2021-08-19';
 
-setInterval(intervalFunc2,60000);
+//setInterval(intervalFunc2,60000);
 
 function intervalFunc() {
      
@@ -51,7 +51,7 @@ function intervalFunc2() {
 fetch(url + `courses/${course}/discussion_topics` , {
     method: "GET",
     headers : {
-        'Authorization' : 'Bearer 349~drgXiiTApxvuCRfcrcHEAsmDXl4eC0ImwGHUvAJEdQtIdcj9tJvWqcFK1joWK1Yz',
+        'Authorization' : 'Bearer <YOUR ACCESS TOKEN>',
         'Content-Type' : 'application/json'
     }
     
