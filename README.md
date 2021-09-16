@@ -3,7 +3,7 @@
 
 ## Contributors 👷‍♀️
 
-| Credit          | Contributions |
+| Credit                                                     | 
 | ---------------------------------------------------------- |
 | [**@barrotbake**](https://github.com/barrotbake)           | 
 | [**@AlanBlandon**](https://github.com/AlanBlandon)         |
