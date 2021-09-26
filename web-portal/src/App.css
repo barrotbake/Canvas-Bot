@@ -11,10 +11,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-<<<<<<< Updated upstream
-body {
-  margin: 0;
-=======
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -412,5 +408,4 @@ left: 0px;
 top: 0px;
 
 background: #C4C4C4;
->>>>>>> Stashed changes
 }

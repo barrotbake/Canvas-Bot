@@ -2,9 +2,6 @@ import './App.css';
 
 let App = () => {
   return (
-<<<<<<< Updated upstream
-    <div className="App">
-=======
     <div class = "Desktop">
       <header class = "Frame2">
         <div class = "NavGroup1">
@@ -43,7 +40,6 @@ let App = () => {
       </div>
       
       
->>>>>>> Stashed changes
     </div>
     
   );
