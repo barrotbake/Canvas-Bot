@@ -14,9 +14,9 @@ async function run() {
     const docs = database.collection("users");
 
     const findResult = await docs.findOne({
-      username: "password",
+      Hello: "Jacob",
     });
-    console.log(findResult.password);
+    console.log(findResult.This);
     // since this method returns the matched document, not a cursor, print it directl
   } finally {
     await client.close();
