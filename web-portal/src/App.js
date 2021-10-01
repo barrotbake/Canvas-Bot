@@ -1,7 +1,7 @@
-import './App.css';
+import React from 'react';
 
 let App = () => {
-  return null  
+  return null
 }
 
 export default App;
