@@ -7,6 +7,7 @@ import express, { json } from 'express';
 import fetch from 'node-fetch';
 import http from 'http';
 import { stringify } from 'querystring';
+import { getRecord } from './dbUtil.js';
 const { Headers } = fetch;
 
 var app = express();
