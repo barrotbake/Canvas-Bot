@@ -23,7 +23,7 @@ for(const file of commandFiles){
 client.on("ready", () => console.log("Canvas Bot is online."));
 
 client.once("messageCreate", message => {
-    if(message.content == "Hello") message.reply("Hello");
+    if(message.content == "Hello") message.reply("Hello!");
 });
 
 client.on("messageCreate", message => {
@@ -46,7 +46,7 @@ client.on("messageCreate", message => {
 });
 /*
 const commands = [
-	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!')
+	new SlashCommandBuilder().setName('discussion').setDescription('Posts Information From Canvas Discussions')
 ]
 .map(command => command.toJSON());
 
@@ -60,9 +60,9 @@ client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
     const { commandName } = interaction;
 	
-    if(commandName === 'ping'){
+    if(commandName === 'discussion'){
     //await interaction.deferReply();
-    fetch(`http://76.174.211.132:8080/whatever`)
+    fetch(`http://IP_ADDRESSS:ds/endpoint`)
     }
 });
 */
