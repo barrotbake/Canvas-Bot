@@ -5,12 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="manifest" href="/manifest.json" />
 	<title>Canvas Bot</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
 	<link rel="shortcut icon" href="https://iwebp.de/images/557580ece255489586f259.png">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	
 	<!-- Animation CSS-->
 	<style>		
 		 /* ----------------------------------------------
@@ -33,7 +35,7 @@
 </head>
 
 
-<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif; background-image:url('bg.svg');">
+<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif; background-image:url('images/bg.svg');">
 <div id="root"></div>
 	
 	
@@ -46,14 +48,14 @@
 				 <img src="https://iwebp.de/images/557580ece255489586f259.png" width ="54" height ="54" class ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Canvas Bot
 			</a>
 			
-			<span class="flex">
-				<div class= "pt-2 px-1">
-				<a class ="text-indigo-400 text-xl hover:underline" href="login.html">Log In</div><img src="https://img.icons8.com/nolan/64/login-rounded-right.png" width ="50" height ="50" class = "transform duration-500 hover:scale-110">					
+			<div class="flex space-x-3">
+				
+				<a class ="loginNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg" href = "login.html#showLogin"><img src="images/Log In.PNG" height = "80" width = "80" class = "rounded">					
 				</a>
-				<div class= "pt-2 px-1">
-				<a class ="text-indigo-400 text-xl hover:underline" href="login.html">Sign Up</div><img src="https://img.icons8.com/nolan/64/create-new.png"width = "50" height ="50" class = "transform duration-500 hover:scale-110">
+				
+				<a class ="signupNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg" href = "login.html#showSignup"><img src="images/Sign Up.PNG" height = "80" width = "80" class = "rounded">					
 				</a>
-			</span>
+			</div>
 			
 		</div>
 
@@ -96,11 +98,8 @@
 
 </div>
 
-
-  <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
-  
+<!-- <script type="module" src="scripts/login.js"></script> -->
+ 
 </body>
 
 </html>
