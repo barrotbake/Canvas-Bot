@@ -19,14 +19,14 @@ signupButton.addEventListener('click', (e) => {
 })
 
 signupNav.addEventListener('click', (e) => {
-    e.preventDefault()
+   // e.preventDefault()
     loginContainer.classList.add("hidden")
     signupContainer.classList.remove("hidden")
    
 })
 
 loginNav.addEventListener('click' , (e) => {
-    e.preventDefault()
+    //e.preventDefault()
     signupContainer.classList.add("hidden")
     loginContainer.classList.remove("hidden")
 })

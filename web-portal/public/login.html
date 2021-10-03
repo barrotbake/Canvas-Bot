@@ -74,9 +74,9 @@
 <form class="flex flex-col bg-white border-2 rounded-lg shadow-lg p-12 mt-5" action="" method="GET">
   <h1 class="mb-5 text-xl font-light text-left sm:text-center">Log in to your account</h1>
   <label class="font-semibold text-xs" for="usernameField">Username</label>
-  <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="username" required>
+  <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="username" minlength="4" maxlength="16" required>
   <label class="font-semibold text-xs mt-3" for="passwordField">Password</label>
-  <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" name="password" required>
+  <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" name="password" minlength="4" maxlength="20" required>
   <button class="flex items-center justify-center h-12 px-6 w-64 bg-gray-400 mt-8 rounded font-semibold text-sm text-white hover:bg-blue-700 hover:shadow-xl">Login</button>
   <div class="flex mt-6 justify-center text-xs">
     Don't have an account?
@@ -93,11 +93,11 @@
   <form class="flex flex-col bg-white border-2 rounded-lg shadow-lg p-12 mt-5" action="" method="GET">
     <h1 class="mb-5 text-xl font-light text-left sm:text-center">Create an account</h1>
     <label class="font-semibold text-xs" for="emailField">Email Address</label>
-    <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="email" required pattern=".*.com">
+    <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="email" name="email" required pattern=".*.com">
     <label class="font-semibold text-xs pt-2" for="usernameField">Username</label>
-    <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="username" required>
+    <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="username" minlength="4" maxlength="16" required>
     <label class="font-semibold text-xs mt-3" for="passwordField">Password</label>
-    <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" name="password" required>
+    <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" name="password" minlength="4" maxlength="20" required>
     <button class="flex items-center justify-center h-12 px-6 w-64 bg-gray-400 mt-8 rounded font-semibold text-sm text-white hover:bg-blue-700 hover:shadow-xl">Create Account</button>
     <div class="flex mt-6 justify-center text-xs">
       Already have an account?
