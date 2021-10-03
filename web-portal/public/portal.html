@@ -47,13 +47,13 @@
     
     <div class="flex space-x-3">
 				
-      <a class ="loginNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg" href="login.html#showLogin"><img src="images/Log In.PNG" height = "80" width = "80" class = "rounded">					
+      <a class ="loginNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white" href="login.html#showLogin"><img src="images/Log In.PNG" height = "80" width = "80" class = "rounded">					
       </a>
       
-      <a class ="signupNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg" href="login.html#showSignup"><img src="images/Sign Up.PNG" height = "80" width = "80" class = "rounded">					
+      <a class ="signupNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white" href="login.html#showSignup"><img src="images/Sign Up.PNG" height = "80" width = "80" class = "rounded">					
       </a>     				
       
-      <a class ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg" href="portal.html"><img src="images/Portal.PNG" height = "80" width = "80" class = "rounded">					
+      <a class ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white" href="portal.html"><img src="images/Portal.PNG" height = "80" width = "80" class = "rounded">					
       </a>  
 
     </div>
@@ -66,27 +66,24 @@
   <div class="px-4 py-20 mx-auto max-w-7xl flex flex-col items-center justify-center slide-in-bottom">
           
     <h1 class="font-bold text-2xl flex items-center"><img src="https://iwebp.de/images/557580ece255489586f259.png" width ="54" height ="54" class ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Canvas Bot</h1>
-    <div class="w-full px-0 pt-5 pb-6 mx-auto mt-4 mb-0 space-y-4 bg-transparent border-0 border-gray-200 rounded-lg md:bg-white md:border sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 md:px-6 sm:mt-8 sm:mb-5">
+
+    <div class="w-full shadow-lg p-10 mx-auto mt-4 mb-0 space-y-4 bg-transparent border-2 border-gray-200 rounded-lg md:bg-white md:border sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 md:px-6 sm:mt-8 sm:mb-5">
       <h1 class="mb-5 text-xl font-light text-left text-gray-800 sm:text-center">Enter your Canvas information here</h1>
-      <form class="pb-1 space-y-4">
-        <label class="block">
-          <span class="block mb-1 text-xs font-medium text-gray-700">Course ID</span>
-          <input class="form-input" type="text" placeholder="Your full name" required />
-        </label>
-        <label class="block">
-          <span class="block mb-1 text-xs font-medium text-gray-700">Zoom Link</span>
-          <input class="form-input" type="email" placeholder="Ex. james@bond.com" inputmode="email" required />
-        </label>
-        <label class="block">
-          <span class="block mb-1 text-xs font-medium text-gray-700">Canvas API Token</span>
-          <input class="form-input" type="password" placeholder="••••••••" required />
-        </label>
-        <div class="flex flex-col items-start justify-between sm:items-center sm:flex-row">
-          <label class="flex items-center">
-            <input type="checkbox" class="form-checkbox" />
-            <span class="block ml-2 text-xs font-medium text-gray-700 cursor-pointer">Agree to Privacy Policy</span>
-          </label>
-          <input type="submit" class="w-full mt-5 btn btn-primary sm:w-auto sm:mt-0" value="Sign up" />
+      <form class="flex flex-col pb-1 space-y-2" action="results.html" method="GET">
+        
+          <label class="block text-md font-medium text-gray-700" for="courseID">Course ID</label>
+          <input class="portal-input flex items-center h-9 px-4 w-full bg-gray-100 rounded focus:outline-white focus:ring-2" type="text" name="courseID" id="courseID" required>
+        
+        
+          <label class="block text-md font-medium text-gray-700" for="zoomLink">Zoom Link</label>
+          <input class="portal-input flex items-center h-9 px-4 w-full bg-gray-100 rounded focus:outline-white focus:ring-2" type="text" name="zoomLink" id="zoomLink" required>
+        
+        
+          <label class="block text-md font-medium text-gray-700" for="token">Canvas API Token</label>
+          <input class="portal-input flex items-center h-9 px-4 w-full bg-gray-100 rounded focus:outline-white focus:ring-2" type="password" name="token" id="token" required>
+        
+        <div class="flex flex-col items-center justify-center sm:items-center sm:flex-row">
+          <button type="submit" class="flex items-center justify-center h-12 px-6 w-64 bg-purple-400 mt-8 rounded-xl font-semibold text-md text-white hover:bg-purple-700 hover:shadow-xl transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-105">Submit</button>
         </div>
       </form>
     </div>
