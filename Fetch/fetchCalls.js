@@ -5,7 +5,6 @@ their own config file.
 import fetch from 'node-fetch';
 import { createRequire } from "module";
 import { getRecord, updateChannelID } from './dbUtil.js';
-import { waitForDebugger } from 'inspector';
 const require = createRequire(import.meta.url);
 const config = require("../Config.json")
 
