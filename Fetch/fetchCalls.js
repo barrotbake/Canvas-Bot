@@ -4,21 +4,22 @@ their own config file.
 */ 
 import fetch from 'node-fetch';
 import { createRequire } from "module";
+import { getRecord } from './dbUtil.js';
+import { waitForDebugger } from 'inspector';
 const require = createRequire(import.meta.url);
-const config = require("../Config.json")
+//const config = require("../Config.json")
 
 
-var obj =  `course_3206736`;
-var course = `3323790`;
-var course1  = `3206736`;
-var date = '2021-08-19';
-
-const url = "https://csufullerton.instructure.com/api/v1/";
+var obj;
+var course;
+var url;
+var access_token;
 
 
 export  function discussions() {
   return async function(){
         try {
+          await getRecord({username: 'student4'}, getFetchData);
           const res1 = await fetch(url + `courses/${course}/discussion_topics`, {
             method: "GET",
             headers: {
@@ -56,6 +57,7 @@ export  function discussions() {
       export  function announcements() {
         return async function(){
         try {
+          await getRecord({username: 'student4'}, getFetchData);
           const res1 = await fetch(url + `/announcements?context_codes[]=${obj}&start_date=${date}`, {
             method: "GET",
             headers: {
@@ -95,6 +97,7 @@ export  function discussions() {
       export  function assignments() {
         return async function(){
         try {
+          await getRecord({username: 'student4'}, getFetchData);
           const res1 = await fetch(url + `/courses/${course1}/assignments`, {
             method: "GET",
             headers: {
@@ -130,4 +133,13 @@ export  function discussions() {
       }
       };
 
+      await getRecord({username: 'moemilly59'}, getFetchData);
+
+      function getFetchData(document) {
+        obj =  'course_' + document._courseid;
+        course = document._courseid;
+        url = 'https://' + document.prefix_field + '.instructure.com/api/v1/';
+        access_token = document.access_token;
+      }
       
+      console.log('obj = ' + obj + '\ncourse = ' + course + '\nurl = ' + url);
