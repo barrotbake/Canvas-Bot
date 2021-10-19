@@ -13,7 +13,7 @@ const client = new MongoClient(uri)
 // var query = {username: 'student1', email: 'student@csu.fullerton.edu'};
 // getRecord(query, getToken);
 
-async function getRecord(queryObject, callback) {
+export async function getRecord(queryObject, callback) {
   try {
     await client.connect();
 
