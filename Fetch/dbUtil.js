@@ -1,7 +1,8 @@
 import { MongoClient } from 'mongodb';
+//import { accessKey } from './demoConfig.json';
 
 // MongoDB deployment's connection string
-const uri = "mongodb+srv://user1:12345@cluster0.ab9yi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = 'mongodb+srv://user1:12345@cluster0.ab9yi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const client = new MongoClient(uri)
 
 // generic asynchronous function to retrieve a record from the database as an object
@@ -12,7 +13,7 @@ const client = new MongoClient(uri)
 // var query = {username: 'student1', email: 'student@csu.fullerton.edu'};
 // getRecord(query, getToken);
 
-export async function getRecord(queryObject, callback) {
+async function getRecord(queryObject, callback) {
   try {
     await client.connect();
 
