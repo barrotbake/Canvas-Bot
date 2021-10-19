@@ -67,7 +67,7 @@ export  function discussions(guild,channel) {
 
         
          async function announcementsFunc(){
-          console.log("I am here")
+          
           
           updateChannelID(guildid,channelid);
           
