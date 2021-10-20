@@ -4,26 +4,32 @@ their own config file.
 */ 
 import fetch from 'node-fetch';
 import { createRequire } from "module";
-import { getRecord } from './dbUtil.js';
-import { waitForDebugger } from 'inspector';
+import { getRecord, updateChannelID } from './dbUtil.js';
 const require = createRequire(import.meta.url);
-//const config = require("../Config.json")
+const config = require("../Config.json")
 
 
 var obj;
 var course;
 var url;
+var course1;
 var access_token;
+var guildid;
+var channelid;
 
 
-export  function discussions() {
-  return async function(){
+export  function discussions(guild,channel) {
+  guildid = guild; 
+  channelid = channel;
+  discussionsFunc();
+   async function discussionsFunc(){
         try {
-          await getRecord({username: 'student4'}, getFetchData);
+          updateChannelID(guildid,channelid);
+          await getRecord({ _courseid : '3664620'}, getFetchData);
           const res1 = await fetch(url + `courses/${course}/discussion_topics`, {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${config.Canvas}`,
+              Authorization: `Bearer ${access_token}`,
               "Content-Type": "application/json",
             },
           });
@@ -31,7 +37,7 @@ export  function discussions() {
           console.log(data1);
           const string = [data1[0].title, data1[0].message];
           const res2 = await fetch(
-            "https://discordapp.com/api/channels/890800027985903686/messages",
+            `https://discordapp.com/api/channels/${channelid}/messages`,
             {
               method: "POST",
               headers: {
@@ -54,14 +60,25 @@ export  function discussions() {
       }
       };
 
-      export  function announcements() {
-        return async function(){
+      export function announcements(guild,channel)  {
+        guildid = guild; 
+        channelid = channel;
+        announcementsFunc();
+
+        
+         async function announcementsFunc(){
+          
+          
+          updateChannelID(guildid,channelid);
+          
         try {
-          await getRecord({username: 'student4'}, getFetchData);
-          const res1 = await fetch(url + `/announcements?context_codes[]=${obj}&start_date=${date}`, {
+          
+          await getRecord({ _courseid : '3664620'}, getFetchData);
+        
+          const res1 = await fetch(url + `/announcements?context_codes[]=${obj}`, {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${config.Canvas}` ,
+              Authorization: `Bearer ${access_token}` ,
               "Content-Type": "application/json",
             },
           });
@@ -69,7 +86,7 @@ export  function discussions() {
           console.log(data1);
           const string = [data1[0].title, data1[0].message];
           const res2 = await fetch(
-            "https://discordapp.com/api/channels/890800027985903686/messages",
+            `https://discordapp.com/api/channels/${channelid}/messages`,
             {
               method: "POST",
               headers: {
@@ -91,17 +108,24 @@ export  function discussions() {
           console.log(err);
         }
       }
-      };
+      
+    }
    
      
-      export  function assignments() {
-        return async function(){
+      export  function assignments(guild, channel) {
+        guildid = guild;
+        channelid = channel;
+        assignmentsFunc();
+        
+        
+         async function assignmentsFunc(){
+          updateChannelID(guildid,channelid);
         try {
-          await getRecord({username: 'student4'}, getFetchData);
+          await getRecord({_courseid : '3664620'}, getFetchData);
           const res1 = await fetch(url + `/courses/${course1}/assignments`, {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${config.Canvas}`,
+              Authorization: `Bearer ${access_token}`,
               "Content-Type": "application/json",
             },
           });
@@ -110,7 +134,7 @@ export  function discussions() {
           var size = data1.length-1;
           const string = [`**Name:**   ${data1[size].name}`, `**Description: **${data1[size].description}`,`**Due Date:**  ${data1[size].due_at}`];
           const res2 = await fetch(
-            "https://discordapp.com/api/channels/890800027985903686/messages",
+            `https://discordapp.com/api/channels/${channelid}/messages`,
             {
               method: "POST",
               headers: {
@@ -133,13 +157,16 @@ export  function discussions() {
       }
       };
 
-      await getRecord({username: 'moemilly59'}, getFetchData);
+      await getRecord({ _courseid : '3664620'}, getFetchData);
 
       function getFetchData(document) {
         obj =  'course_' + document._courseid;
         course = document._courseid;
+        course1 = "_" + course;
         url = 'https://' + document.prefix_field + '.instructure.com/api/v1/';
         access_token = document.access_token;
       }
       
-      console.log('obj = ' + obj + '\ncourse = ' + course + '\nurl = ' + url);
+      console.log('obj = ' + obj + '\ncourse = ' + course + '\nurl = ' + url + '\naccess_token = ' + access_token);
+
+      

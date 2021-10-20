@@ -11,7 +11,36 @@ const client = new MongoClient(uri)
 // ex: 
 // function getToken(record) { console.log(record.access_token); }
 // var query = {username: 'student1', email: 'student@csu.fullerton.edu'};
+
+
 // getRecord(query, getToken);
+
+export async function updateChannelID(guildids, channelids) {
+  
+    await client.connect();
+
+    // db name and collection
+    const database = client.db("Users");
+    const docs = database.collection("user_info");
+
+    
+
+    var query = {guildid: `${guildids}`};
+    var insert = {$set: {channelid: `${channelids}`}};
+
+    
+    // find the first record matching the given query
+    await docs.updateOne(query,insert);
+
+    // return the record to the callback function
+     await client.close();
+  
+}
+
+  
+    
+  
+
 
 export async function getRecord(queryObject, callback) {
   try {
