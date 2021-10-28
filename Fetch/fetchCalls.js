@@ -5,6 +5,7 @@ their own config file.
 import fetch from 'node-fetch';
 import { createRequire } from "module";
 import { getRecord, updateChannelID } from './dbUtil.js';
+import { clearData } from './clear.js';
 const require = createRequire(import.meta.url);
 const config = require("../Canvas Bot/Source/Data/config.json")
 
@@ -177,13 +178,5 @@ export  function discussions(guild,channel) {
       }
       
       
-      function clearData(){
-     obj = null;
-     course = null;
-     url = null;
-     course1 = null;
-     access_token = null;
-     guildid = null;
-     channelid = null;
-      }
+      
       
