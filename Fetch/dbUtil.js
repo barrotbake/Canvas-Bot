@@ -17,6 +17,7 @@ const client = new MongoClient(uri)
 
 export async function updateChannelID(guildids, channelids) {
   
+  try{
     await client.connect();
 
     // db name and collection
@@ -25,17 +26,25 @@ export async function updateChannelID(guildids, channelids) {
 
     
 
-    var query = {guildid: `${guildids}`};
-    var insert = {$set: {channelid: `${channelids}`}};
+    var query = {guild_id: `${guildids}`};
+    var insert = {$set: {channel_id: `${channelids}`}};
 
-    
+    console.log(query);
+    console.log(insert);
     // find the first record matching the given query
-    await docs.updateOne(query,insert);
+    
+      docs.updateOne(query,insert);
 
-    // return the record to the callback function
-     await client.close();
-  
+  }
+  catch(error){
+    console.log(error);
+  }
 }
+  
+    
+      
+  
+
 
   
     
@@ -54,9 +63,12 @@ export async function getRecord(queryObject, callback) {
     const findResult = await docs.findOne(queryObject);
 
     // return the record to the callback function
+    console.log(queryObject + "query");
     callback(findResult);
+
     
-  } finally {
-    await client.close();
+    
+  } catch(error) {
+    console.log(error);
   }
 }

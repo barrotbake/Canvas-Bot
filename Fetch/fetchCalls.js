@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 import { createRequire } from "module";
 import { getRecord, updateChannelID } from './dbUtil.js';
 const require = createRequire(import.meta.url);
-const config = require("../Config.json")
+const config = require("../Canvas Bot/Source/Data/config.json")
 
 
 var obj;
@@ -25,8 +25,8 @@ export  function discussions(guild,channel) {
    async function discussionsFunc(){
         try {
           updateChannelID(guildid,channelid);
-          await getRecord({ _courseid : '3664620'}, getFetchData);
-          const res1 = await fetch(url + `courses/${course}/discussion_topics`, {
+          await getRecord({ guild_id : `${guildid}`}, getFetchData);
+          const res1 = await fetch(url + `courses/${course}/discussion_topics?scope=unlocked`, {
             method: "GET",
             headers: {
               Authorization: `Bearer ${access_token}`,
@@ -57,12 +57,14 @@ export  function discussions(guild,channel) {
         } catch (err) {
           console.log(err);
         }
+        clearData();
       }
       };
 
       export function announcements(guild,channel)  {
         guildid = guild; 
         channelid = channel;
+       
         announcementsFunc();
 
         
@@ -73,9 +75,9 @@ export  function discussions(guild,channel) {
           
         try {
           
-          await getRecord({ _courseid : '3664620'}, getFetchData);
+          await getRecord({ guild_id : `${guildid}`}, getFetchData);
         
-          const res1 = await fetch(url + `/announcements?context_codes[]=${obj}`, {
+          const res1 = await fetch(url + `/announcements?context_codes[]=${obj}&latest_only=true`, {
             method: "GET",
             headers: {
               Authorization: `Bearer ${access_token}` ,
@@ -107,7 +109,10 @@ export  function discussions(guild,channel) {
         } catch (err) {
           console.log(err);
         }
+        clearData();
       }
+
+      
       
     }
    
@@ -121,8 +126,9 @@ export  function discussions(guild,channel) {
          async function assignmentsFunc(){
           updateChannelID(guildid,channelid);
         try {
-          await getRecord({_courseid : '3664620'}, getFetchData);
-          const res1 = await fetch(url + `/courses/${course1}/assignments`, {
+          console.log(guildid +"guild2")
+          await getRecord({guild_id : `${guildid}`}, getFetchData);
+          const res1 = await fetch(url + `/courses/${course}/assignments`, {
             method: "GET",
             headers: {
               Authorization: `Bearer ${access_token}`,
@@ -132,7 +138,8 @@ export  function discussions(guild,channel) {
           const data1 = await res1.json();
           console.log(data1);
           var size = data1.length-1;
-          const string = [`**Name:**   ${data1[size].name}`, `**Description: **${data1[size].description}`,`**Due Date:**  ${data1[size].due_at}`];
+          
+          const string = [`\`\`\`Name:   ${data1[size].name}`, `**Description:** ${data1[size].description}`,`**Due Date:**  ${data1[size].due_at}\n\`\`\``];
           const res2 = await fetch(
             `https://discordapp.com/api/channels/${channelid}/messages`,
             {
@@ -154,19 +161,29 @@ export  function discussions(guild,channel) {
         } catch (err) {
           console.log(err);
         }
+        clearData();
       }
-      };
+      }
 
-      await getRecord({ _courseid : '3664620'}, getFetchData);
+      //await getRecord({ _courseid : '3664620'}, getFetchData);
 
-      function getFetchData(document) {
-        obj =  'course_' + document._courseid;
-        course = document._courseid;
-        course1 = "_" + course;
-        url = 'https://' + document.prefix_field + '.instructure.com/api/v1/';
-        access_token = document.access_token;
+       function getFetchData(document) {
+         obj =  'course_' + document._courseid;
+         course = document._courseid;
+         course1 = "_" + course;
+         url = 'https://' + document.prefix + '.instructure.com/api/v1/';
+         access_token = document.access_token;
+         console.log('obj = ' + obj + '\ncourse = ' + course + '\nurl = ' + url + '\naccess_token = ' + access_token);
       }
       
-      console.log('obj = ' + obj + '\ncourse = ' + course + '\nurl = ' + url + '\naccess_token = ' + access_token);
-
+      
+      function clearData(){
+     obj = null;
+     course = null;
+     url = null;
+     course1 = null;
+     access_token = null;
+     guildid = null;
+     channelid = null;
+      }
       
