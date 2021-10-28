@@ -21,9 +21,10 @@ var channel;
 
 //function intervalFunc2() {
      
- app.all('/assignments',req => assignments(guild = req.body.guild,channel =req.body.channel));
-app.all('/discussions',req => discussions(guild = req.body.guild,channel =req.body.channel));
-app.all('/announcements', req => announcements(guild = req.body.guild,channel =req.body.channel));
+ app.all('/assignments',req => assignments(guild = req.body.guild,channel = req.body.channel));
+app.all('/discussions',req => discussions(guild = req.body.guild,channel = req.body.channel));
+app.all('/announcements', req => announcements(guild = req.body.guild,channel = req.body.channel));
+
 
 
 
