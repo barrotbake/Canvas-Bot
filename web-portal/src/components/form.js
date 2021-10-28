@@ -17,7 +17,7 @@ export let Form = (props) => {
     return (
         <div className="signupContainer flex flex-col items-center justify-center slide-in-bottom mt-20" id="showSignup">
             <h1 className="font-bold text-2xl flex items-center">
-                <img src="https://iwebp.de/images/557580ece255489586f259.png" width="54" height="54" className="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"/>
+                <img src="https://iwebp.de/images/557580ece255489586f259.png" alt = "logo" width="54" height="54" className="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"/>
             Canvas Bot</h1>
             <form className="flex flex-col bg-white border-2 rounded-lg shadow-lg p-12 mt-5" action="" method="GET">
                 <h1 className="mb-5 text-xl font-light text-left sm:text-center">{props.formHeading}</h1>
