@@ -5,6 +5,7 @@ their own config file.
 import fetch from 'node-fetch';
 import { createRequire } from "module";
 import { getRecord, updateChannelID } from './dbUtil.js';
+import { clearData } from './clear.js';
 const require = createRequire(import.meta.url);
 const config = require("../Canvas Bot/Source/Data/config.json")
 
@@ -33,9 +34,10 @@ export  function discussions(guild,channel) {
               "Content-Type": "application/json",
             },
           });
-          const data1 = await res1.json();
-          console.log(data1);
-          const string = [data1[0].title, data1[0].message];
+          const apiData = await res1.json();
+          //console.log(apiData);
+          for(discussions of apiData){
+          const string = ["**TOPIC: "+discussions.title +"**", discussions.message + "\n"];
           const res2 = await fetch(
             `https://discordapp.com/api/channels/${channelid}/messages`,
             {
@@ -52,8 +54,9 @@ export  function discussions(guild,channel) {
             }
           );
       
-          const data2 = await res2.json();
-          console.log(data2);
+          const apiResponse = await res2.json();
+         // console.log(apiResponse);
+          }
         } catch (err) {
           console.log(err);
         }
@@ -84,9 +87,10 @@ export  function discussions(guild,channel) {
               "Content-Type": "application/json",
             },
           });
-          const data1 = await res1.json();
-          console.log(data1);
-          const string = [data1[0].title, data1[0].message];
+          const apiData = await res1.json();
+          console.log(apiData);
+          for( announcements of apiData){
+          const string = [`\`\`\`${announcements.title}\n`, `${announcements.message}\n\`\`\``];
           const res2 = await fetch(
             `https://discordapp.com/api/channels/${channelid}/messages`,
             {
@@ -103,8 +107,9 @@ export  function discussions(guild,channel) {
             }
           );
             
-          const data2 = await res2.json();
-          console.log(data2);
+          const apiResponse = await res2.json();
+          console.log(apiResponse);
+          }
           
         } catch (err) {
           console.log(err);
@@ -128,19 +133,22 @@ export  function discussions(guild,channel) {
         try {
           console.log(guildid +"guild2")
           await getRecord({guild_id : `${guildid}`}, getFetchData);
-          const res1 = await fetch(url + `/courses/${course}/assignments`, {
+          const res1 = await fetch(url + `/courses/${course}/assignments?order_by=due_at`, {
             method: "GET",
             headers: {
               Authorization: `Bearer ${access_token}`,
               "Content-Type": "application/json",
             },
           });
-          const data1 = await res1.json();
-          console.log(data1);
-          var size = data1.length-1;
+          const apiData = await res1.json();
           
-          const string = [`\`\`\`Name:   ${data1[size].name}`, `**Description:** ${data1[size].description}`,`**Due Date:**  ${data1[size].due_at}\n\`\`\``];
-          const res2 = await fetch(
+          console.log(apiData);
+          var size = apiData.length-1;
+          
+          
+          for( assignments of apiData){
+          const string = [`\`\`\`Name:   ${assignments.name}`, `Description:\n ${assignments.description}`,`Due Date:  ${assignments.due_at}\n\`\`\``];         
+             const res2 = await fetch(
             `https://discordapp.com/api/channels/${channelid}/messages`,
             {
               method: "POST",
@@ -155,17 +163,19 @@ export  function discussions(guild,channel) {
               }),
             }
           );
+          
       
-          const data2 = await res2.json();
-          console.log(data2);
+          const apiResponse = await res2.json();
+          console.log(apiResponse);
+          }
         } catch (err) {
           console.log(err);
         }
+       
         clearData();
       }
       }
 
-      //await getRecord({ _courseid : '3664620'}, getFetchData);
 
        function getFetchData(document) {
          obj =  'course_' + document._courseid;
@@ -177,13 +187,5 @@ export  function discussions(guild,channel) {
       }
       
       
-      function clearData(){
-     obj = null;
-     course = null;
-     url = null;
-     course1 = null;
-     access_token = null;
-     guildid = null;
-     channelid = null;
-      }
+      
       
