@@ -5,7 +5,7 @@ module.exports = {
         const config = require('../Data/config.json');
         const {MongoClient} = require('mongodb');
 
-        const uri = "mongodb+srv://Alan_B:AlanBlandon@cluster0.ab9yi.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-836il4-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true"
+        const uri = "uri"
         const mongo_client = new MongoClient(uri);
         
         const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
