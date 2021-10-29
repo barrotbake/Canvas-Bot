@@ -1,11 +1,13 @@
 import React from "react";
 import { Form } from "../components/form"
 
+
 export let LoginPage = () => {
+
     return (
         <div className="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
             <div className="form-containter">
-                <Form formHeading="Create Account" inputMap={["Username", "Password", "Canvas ID"]}></Form>
+                <Form formHeading="Create Account" inputMap={["Email", "Password", "Canvas ID"]}></Form>
             </div>
             {/* <!--Footer--> */}
             <div className="w-full pt-60 pb-6 text-sm text-center md:text-left fade-in text-gray-500">
