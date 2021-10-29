@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'discussions',
+    name: 'announcements',
     execute(message, args, Discord){
         const update = require('../main.js');
         const config = require('../Data/config.json');
@@ -14,7 +14,7 @@ module.exports = {
         let discord_id = {"guild": `${server}`, "channel": `${channel}`}
 
         update.updateListing(mongo_client, String(server), { guild_id: server });
-        fetch(`http://${config.IP}:${config.Port}/discussions`, {
+        fetch(`http://${config.IP}:${config.Port}/announcements`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

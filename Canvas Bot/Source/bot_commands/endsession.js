@@ -12,6 +12,7 @@ module.exports = {
             message.reply("There isn't a study session at the moment. You can create one by using the `&studysession` command.");
         }
         else{
+            /*******************Category/Channel-Deletion*******************/
             category.delete();
             textChannel1.delete();
             textChannel2.delete();
