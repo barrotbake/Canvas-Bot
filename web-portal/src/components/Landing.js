@@ -2,6 +2,7 @@ import React from 'react';
 
 const Landing = () => {
     return (
+  <div class="h-screen pb-14 bg-right bg-cover"> 
     <div className="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         {/* <Form formHeading="Create Account" inputMap={["Username", "Password", "Canvas ID"]}></Form> */}
         <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
@@ -26,6 +27,7 @@ const Landing = () => {
             </div>
               
     </div>
+  </div>
     )
 }
 
