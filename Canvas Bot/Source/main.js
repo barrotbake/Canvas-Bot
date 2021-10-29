@@ -1,18 +1,55 @@
+/***********************Node.js-Modules***********************/
 const Discord = require('discord.js');
 const config = require('./Data/config.json');
 const fs = require('fs');
+const {MongoClient} = require('mongodb');
+const intents = new Discord.Intents(32767)
+const client = new Discord.Client({ intents })
 
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
-const { clientId, guildId, TOKEN } = require('./Data/config.json');
-const { response } = require('express');
+const uri = "mongodb+srv://Alan_B:AlanBlandon@cluster0.ab9yi.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-836il4-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true"
+const mongo_client = new MongoClient(uri);
 
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+//This async function trys to connect to the database and calls the listDatabases function.
+async function main(){
+    try {
+        await mongo_client.connect();
+        await listDatabases(mongo_client);
+    } catch(err) {
+        console.error(err);
+    }
+}
+main().catch(console.error);
 
-const intents = new Discord.Intents(32767);
-const client = new Discord.Client({ intents });
+//This async function lists the databases present using the mongo client.
+async function listDatabases(mongo_client){
+    databasesList = await mongo_client.db().admin().listDatabases();
+    console.log("Databases:");
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+};
 
+//This async function updates existing data in the user_info collection in the Users database.
+async function updateListing(mongo_client, nameOfListing, updatedListing) {
+    await mongo_client.connect();
+    const result = await mongo_client.db("Users").collection("user_info")
+    .updateOne({ guild_id: nameOfListing }, { $set: updatedListing });
+    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+    console.log(`${result.modifiedCount} document(s) was/were updated.`);
+}
+
+//This async function executes when the join command is used.
+async function init_join(mongo_client, nameOfListing, updatedListing) {
+    await mongo_client.connect();
+    const result = await mongo_client.db("Users").collection("user_info")
+    .updateOne({ _courseid: nameOfListing }, { $set: updatedListing });
+    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+    console.log(`${result.modifiedCount} document(s) was/were updated.`);
+}
+
+client.on("ready", () => {
+    console.log("Canvas Bot is online.");
+});
+
+/***********************Command-JS-Files***********************/
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./Source/bot_commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
@@ -20,50 +57,32 @@ for(const file of commandFiles){
     client.commands.set(command.name, command)
 }
 
-client.on("ready", () => console.log("Canvas Bot is online."));
-
-client.once("messageCreate", message => {
-    if(message.content == "Hello") message.reply("Hello!");
-});
-
+/***********************Command-Handler***********************/
 client.on("messageCreate", message => {
     if(!message.content.startsWith(config.prefix) || message.author.bot) return;
     const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-
-    if(command === 'clear'){
-        client.commands.get('clear').execute(message, args);
-    }
-    else if(command === 'studysession'){
+    if(command === 'studysession'){
         client.commands.get('studysession').execute(message, args, Discord);
     }
     else if(command === 'endsession'){
         client.commands.get('endsession').execute(message, args, Discord);
     }
-    else if(command === 'discussion'){
-        client.commands.get('discussion').execute(message, args, Discord);
+    else if(command === 'discussions'){
+        client.commands.get('discussions').execute(message, args, Discord);
     }
-});
-/*
-const commands = [
-	new SlashCommandBuilder().setName('discussion').setDescription('Posts Information From Canvas Discussions')
-]
-.map(command => command.toJSON());
-
-const rest = new REST({ version: '9' }).setToken(TOKEN);
-
-rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
-
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
-    const { commandName } = interaction;
-	
-    if(commandName === 'discussion'){
-    //await interaction.deferReply();
-    fetch(`http://IP_ADDRESSS:ds/endpoint`)
+    else if(command === 'assignments'){
+        client.commands.get('assignments').execute(message, args, Discord);
     }
-});
-*/
+    else if(command === 'announcements'){
+        client.commands.get('announcements').execute(message, args, Discord);
+    }
+    else if(command === 'join'){
+        client.commands.get('join').execute(message, Discord);
+    }
+})
 client.login(config.TOKEN);
+
+//These functions are exported so that they can be used in the files regarding the commands.
+exports.updateListing = updateListing;
+exports.init_join = init_join;
