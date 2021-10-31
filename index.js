@@ -5,25 +5,30 @@ UPDATE V2: Added function that updates on an interval of 1 minute. Once we have 
 UPDATE V3: Can now communicate with the discord server itself and pull information from the canvas as well
 UPDATE V4: Cleaned up index.js for only thing that may be necessary. Added a fetch folder.
 UPDATE V5: Added a bunch of things unhardcoded and we are connected to the db and can pull from it and send based on information on the DB
+UPDATE V6: Fixed all the require/importing issues that wouldn't allow for functions ot be called. Removed the initialization of variables in the functions
+so there isn't information sent to the wrong servers.
 */
-import express, { json, query, request, response } from 'express';
-import { assignments , announcements , discussions} from "./Fetch/fetchCalls.js";
-var app = express();
-app.use(express.json());
-const PORT = 8080;
-app.listen(PORT);
-
-var guild;
-var channel;
 
 //setInterval(intervalFunc2,60000);
 
 
 //function intervalFunc2() {
-     
- app.all('/assignments',req => assignments(guild = req.body.guild,channel = req.body.channel));
-app.all('/discussions',req => discussions(guild = req.body.guild,channel = req.body.channel));
-app.all('/announcements', req => announcements(guild = req.body.guild,channel = req.body.channel));
+const express = require('express');
+const { assignments , announcements , discussions} = require ("./Fetch/fetchCalls.js");
+var router = express.Router()
+var app = express();
+app.use(express.json());
+const PORT = 8080;
+app.listen(PORT);
+
+
+
+        
+
+  app.all('/assignments',(request) => { assignments(request.body.guild, request.body.channel);});
+app.all('/discussions',(request) => { discussions(request.body.guild, request.body.channel);});
+app.all('/announcements', (request) => {announcements(request.body.guild,request.body.channel);});
+
 
 
 
