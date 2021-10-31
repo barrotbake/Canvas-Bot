@@ -1,21 +1,12 @@
-import { MongoClient } from 'mongodb';
-//import { accessKey } from './demoConfig.json';
+const  {MongoClient} = require ('mongodb');
+const config = require('../Config.json');
 
-// MongoDB deployment's connection string
-const uri = 'mongodb+srv://user1:12345@cluster0.ab9yi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const client = new MongoClient(uri)
-
-// generic asynchronous function to retrieve a record from the database as an object
-// queryObject - object variable representing the query sent to the database
-// callback - callback function which will be given the retrieved record as a parameter
-// ex: 
-// function getToken(record) { console.log(record.access_token); }
-// var query = {username: 'student1', email: 'student@csu.fullerton.edu'};
+const uri = config.uri;
+const client = new MongoClient(uri);
 
 
-// getRecord(query, getToken);
 
-export async function updateChannelID(guildids, channelids) {
+ async function updateChannelID(guildids, channelids) {
   
   try{
     await client.connect();
@@ -29,8 +20,6 @@ export async function updateChannelID(guildids, channelids) {
     var query = {guild_id: `${guildids}`};
     var insert = {$set: {channel_id: `${channelids}`}};
 
-    console.log(query);
-    console.log(insert);
     // find the first record matching the given query
     
       docs.updateOne(query,insert);
@@ -41,17 +30,8 @@ export async function updateChannelID(guildids, channelids) {
   }
 }
   
-    
-      
-  
 
-
-  
-    
-  
-
-
-export async function getRecord(queryObject, callback) {
+  async function getRecord(queryObject, callback) {
   try {
     await client.connect();
 
@@ -63,7 +43,7 @@ export async function getRecord(queryObject, callback) {
     const findResult = await docs.findOne(queryObject);
 
     // return the record to the callback function
-    console.log(queryObject + "query");
+    
     callback(findResult);
 
     
@@ -72,3 +52,4 @@ export async function getRecord(queryObject, callback) {
     console.log(error);
   }
 }
+module.exports = {getRecord,updateChannelID};
