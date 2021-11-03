@@ -12,16 +12,20 @@ const Navbar = () => {
       </Link>
       
       <div class="flex space-x-3">
-        <Link to ='/login' className ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
+        <Link to ='/login' className ="loginNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
         <img src="images/Log In.PNG" height = "80" width = "80" class = "rounded" alt="login button"/>		        
         </Link>
 
-        <Link to ='/signup' className ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
+        <Link to ='/signup' className ="signupNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
         <img src="images/Sign Up.PNG" height = "80" width = "80" class = "rounded" alt="signup button"/>		        
-        </Link>
+        </Link>        
         
-        <Link to ='/portal' className ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
+        <Link to ='/portal' className ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">        
         <img src="images/Portal.PNG" height = "80" width = "80" class = "rounded" alt="portal button"/>		        
+        </Link>
+
+        <Link to ='/' className ="logoutNav hidden text-red-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-indigo-300 rounded-full shadow-lg bg-white">          
+        <img src="images/Log Out.PNG" height = "80" width = "80" class = "rounded" alt="logout button"/>		        
         </Link> 
       </div>
       

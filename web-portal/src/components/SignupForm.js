@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const SignupForm = () => {
     return (
 <div class="h-screen pb-14 bg-right bg-cover">        
-<div class = "signupContainer flex flex-col items-center justify-center slide-in-bottom mt-20" id ="showSignup">
+<div class = "flex flex-col items-center justify-center slide-in-bottom mt-20" id ="showSignup">
 <h1 class="font-bold text-2xl flex items-center"><img src="https://iwebp.de/images/557580ece255489586f259.png" alt="logo" width ="54" height ="54" class ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"/>Canvas Bot</h1>
   <form class="flex flex-col bg-white border-2 rounded-lg shadow-lg p-12 mt-5" action="" method="GET">
     <h1 class="mb-5 text-xl font-light text-left sm:text-center">Create an account</h1>
