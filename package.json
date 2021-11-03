@@ -1,25 +1,18 @@
 {
-  "name": "canvasbot",
+  "name": "hash_pass",
   "version": "1.0.0",
-  "description": "Canvas bot that requests API data from Canvas",
-  "main": "index.js",
+  "description": "hashing password",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryanwillyams/group-8-project.git"
-  },
-  "author": "",
+  "author": "Hashing password",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ryanwillyams/group-8-project/issues"
-  },
-  "homepage": "https://github.com/ryanwillyams/group-8-project#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongodb": "^4.1.3",
-    "node-fetch": "^3.0.0",
+    "mongoose": "^6.0.12",
     "nodemon": "^2.0.14"
   }
 }
