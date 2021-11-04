@@ -18,16 +18,16 @@ const Footer = () => {
 				<h3 class="tracking-wide uppercase font-semibold">Product</h3>
 				<ul class="space-y-1">
 					<li>
-						<a class="hover:underline" href="#">Features</a>
+						<a class="hover:underline" href="/">Features</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">Integrations</a>
+						<a class="hover:underline" href="/">Integrations</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">Documentation</a>
+						<a class="hover:underline" href="/">Documentation</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">FAQ</a>
+						<a class="hover:underline" href="/">FAQ</a>
 					</li>
 				</ul>
 			</div>
@@ -35,13 +35,13 @@ const Footer = () => {
 				<h3 class="tracking-wide uppercase font-semibold">Developers</h3>
 				<ul class="space-y-1">
 					<li>
-						<a class="hover:underline" href="#">About Us</a>
+						<a class="hover:underline" href="/">About Us</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">Contact</a>
+						<a class="hover:underline" href="/">Contact</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">Terms of Service</a>
+						<a class="hover:underline" href="/">Terms of Service</a>
 					</li>
 				</ul>
 			</div>
@@ -49,13 +49,13 @@ const Footer = () => {
 				<h3 class="tracking-wide uppercase font-semibold">Resources</h3>
 				<ul class="space-y-1">
 					<li>
-						<a class="hover:underline" href="#">Canvas API</a>
+						<a class="hover:underline" href="/">Canvas API</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">Discord Bots</a>
+						<a class="hover:underline" href="/">Discord Bots</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="#">Guides</a>
+						<a class="hover:underline" href="/">Guides</a>
 					</li>
 				</ul>
 			</div>

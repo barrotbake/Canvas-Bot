@@ -8,6 +8,7 @@ const inputPassword = document.getElementById('password')
 const mobileButton = document.getElementById('mobileButton')
 const mobileMenu = document.querySelector(".mobileMenu")
 
+
 function authenticateUser (username, password) {
     if (username === 'testuser123' && password === 'password') {
       return {
@@ -44,7 +45,7 @@ if(localStorage.getItem('loggedin') === 'true')
 {
     loginNav.classList.toggle("hidden")
     signupNav.classList.toggle("hidden")
-    logoutNav.classList.remove("hidden")
+    logoutNav.classList.remove("hidden")    
 }
 
 logoutNav.addEventListener('click', (e)=> {
