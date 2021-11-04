@@ -31,14 +31,14 @@ const Navbar = () => {
 
       <div className = "md:hidden">
       <button id="mobileButton" class="md:hidden flex ml-2">
-        <img src="https://img.icons8.com/nolan/50/drag-list-down.png" alt="mobile button"/>
+        <img src="https://img.icons8.com/nolan/64/menu.png" alt="mobile button"/>
       </button>
 
       <div className ="mobileMenu absolute md:hidden items-center mt-1 w-20 shadow-xl">
-        <Link to ='/login' className="block px-2 py-2 text-left bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Login</Link>
-        <Link to ='/signup' className="block px-2 py-2 text-left bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Signup</Link>
-        <Link to ='/portal' className="block px-2 py-2 text-left bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Portal</Link>
-        <Link to ='/' className="logoutNav hidden px-2 py-2 text-left bg-white text-red-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Log Out</Link>
+        <Link to ='/login' className="block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Login</Link>
+        <Link to ='/signup' className="block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Signup</Link>
+        <Link to ='/portal' className="block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Portal</Link>
+        <Link to ='/' className="logoutNav hidden px-2 py-2 text-center bg-white text-red-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md">Log Out</Link>
       </div>
       </div>
     </div>
