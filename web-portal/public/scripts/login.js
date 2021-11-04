@@ -5,6 +5,8 @@ const signupNav = document.querySelector(".signupNav")
 const logoutNav = document.querySelector(".logoutNav")
 const inputUsername = document.getElementById('username')
 const inputPassword = document.getElementById('password')
+const mobileButton = document.getElementById('mobileButton')
+const mobileMenu = document.querySelector(".mobileMenu")
 
 function authenticateUser (username, password) {
     if (username === 'testuser123' && password === 'password') {
@@ -17,6 +19,7 @@ function authenticateUser (username, password) {
   
   }
 
+if (loginButton != null){
 loginButton.addEventListener('click', (e)=> {
     
     let testUser = authenticateUser((inputUsername.value),inputPassword.value);
@@ -35,6 +38,7 @@ loginButton.addEventListener('click', (e)=> {
         alert('Login failed. \n\nUsername or password not recognized in the system')
     }
 })
+}
 
 if(localStorage.getItem('loggedin') === 'true')
 {
@@ -47,4 +51,9 @@ logoutNav.addEventListener('click', (e)=> {
     localStorage.clear()
     alert('Logged out successfully')
     location.href="/"
+})
+
+
+mobileButton.addEventListener('click', (e)=> {
+  mobileMenu.classList.toggle("fade")
 })

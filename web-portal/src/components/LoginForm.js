@@ -12,7 +12,7 @@ const LoginForm = () => {
   <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="text" name="username" id="username" minLength="4" maxLength="16" required/>
   <label class="font-semibold text-xs mt-3" htmlFor="password">Password</label>
   <input class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2" type="password" name="password" id="password" minLength="8" maxLength="20" required/>
-  <button type="submit" id="loginButton" class="flex items-center justify-center h-12 px-6 w-64 bg-blue-400 mt-8 rounded-xl font-semibold text-md text-white hover:bg-blue-700 hover:shadow-xl transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-105">Login</button>
+  <button id="loginButton" class="flex items-center justify-center h-12 px-6 w-64 bg-blue-400 mt-8 rounded-xl font-semibold text-md text-white hover:bg-blue-700 hover:shadow-xl transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-105">Login</button>
    <div class="flex mt-6 justify-center text-xs">
     Don't have an account?
     <Link to ='/signup' className="text-blue-400 hover:text-blue-600 hover:underline ml-1 loginButton"> Sign Up </Link>
