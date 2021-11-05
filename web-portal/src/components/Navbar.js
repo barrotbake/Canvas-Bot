@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Navbar = () => {
     return (
-<header className="mb-4 p-1 border-indigo-300 border-b border-opacity-80 bg-white">
+<header className="mb-4 p-1 border-gray-300 border-b border-opacity-80 bg-white">
 	<div className="container flex justify-between h-16 mx-auto">
       <Link to = '/' className = "flex items-center text-indigo-300 no-underline hover:no-underline font-semibold text-xl lg:text-3xl">
          <img src="https://iwebp.de/images/557580ece255489586f259.png" width ="54" height ="54" class ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" alt="logo"/>Canvas Bot
