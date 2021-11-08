@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-<footer class="mt-40 mx-72 border-t border-indigo-300 border-opacity-60 fade-in text-indigo-300">
+<footer class="mt-40 mx-64 lg:mx-96 border-t border-indigo-300 border-opacity-60 fade-in text-indigo-300">
 	<div></div>
 	<div class="container flex flex-col justify-between px-6 py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 	 <div class="flex justify-center lg:justify-start lg:w-1/3">			
