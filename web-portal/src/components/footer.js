@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-<footer class="mt-24 divide-y divide-indigo-300 divide-opacity-60 fade-in text-indigo-300">
+<footer class="mt-40 mx-72 border-t border-indigo-300 border-opacity-60 fade-in text-indigo-300">
 	<div></div>
 	<div class="container flex flex-col justify-between px-6 py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 	 <div class="flex justify-center lg:justify-start lg:w-1/3">			
@@ -72,7 +72,7 @@ const Footer = () => {
 			</div>
 	</div>
 	</div>
-  <div class="mx-44 py-6 text-sm items-center justify-center text-center">© CS 362 Group 8
+  <div class="pt-6 text-sm items-center justify-center text-center border-t border-indigo-300 border-opacity-60">© CS 362 Group 8
   <p class="py-2">Front end designed with: </p>
   <img class="mx-auto inline " width="70" height="70"src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" alt="react logo"/>
   <img class="mx-auto inline" width="70" height="70"src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21.svg" alt="tailwind logo"/>
