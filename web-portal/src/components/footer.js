@@ -72,10 +72,10 @@ const Footer = () => {
 			</div>
 	</div>
 	</div>
-  <div class="pt-6 text-sm items-center justify-center text-center border-t border-indigo-300 border-opacity-60">© CS 362 Group 8
-  <p class="py-2">Front end designed with: </p>
+  <div class="pt-6 pb-2 text-sm items-center justify-center text-center border-t border-indigo-300 border-opacity-60">© CS 362 Group 8
+  {/* <p class="py-2">Front end designed with: </p>
   <img class="mx-auto inline " width="70" height="70"src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" alt="react logo"/>
-  <img class="mx-auto inline" width="70" height="70"src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21.svg" alt="tailwind logo"/>
+  <img class="mx-auto inline" width="70" height="70"src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21.svg" alt="tailwind logo"/> */}
   </div>
   
   
