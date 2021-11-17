@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from "react-router-dom";
+import axios from 'axios';
 
 const SignupForm = () => {
   const [email, setEmail] = useState('');
@@ -11,6 +12,18 @@ const SignupForm = () => {
       e.preventDefault();
       const newUser = { email, username, password};
       console.log(newUser);
+
+      const createNewUser = {
+        email: email,
+        username: username,
+        password: password
+      };
+
+      axios
+      .post("http://localhost:5000/login/sign-up", createNewUser)
+      .then((res) => console.log(res.data));
+
+      alert("created new user")
     }
 
     return (

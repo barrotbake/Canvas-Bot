@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 const PortalForm = () => {
 const [courseID, setCourseID] = useState('');
@@ -9,6 +10,18 @@ let handleSubmit = (e) => {
   e.preventDefault();
   const newRequest = { courseID, zoomLink, apiToken};
   console.log(newRequest);
+
+  const createNewRequest = {
+    courseId: courseID,
+    zoomLink: zoomLink,
+    canvasApiToken: apiToken
+  };
+
+  axios
+      .post("http://localhost:5000/login/portal", createNewRequest)
+      .then((res) => console.log(res.data));
+
+  alert("sent data")
 }
 
     return (
