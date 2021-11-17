@@ -5,7 +5,6 @@ import { LoginPage } from './pages/LoginPage'
 import { SignupPage } from './pages/SignupPage'
 import { PortalPage } from './pages/PortalPage'
 import Navbar from './components/Navbar'
-import Landing from './components/Landing'
 import Footer from './components/Footer'
 
 let App = () => {
