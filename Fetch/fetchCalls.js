@@ -4,7 +4,8 @@ their own config file.
 */ 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-const   {updateChannelID} = require('./dbUtil.js');
+const config = require('../Config.json');
+const  {updateChannelID} = require('./dbUtil.js');
 const  {getRecord} = require('./dbUtil.js');
 const  {clearData} = require('./clear.js');
 
@@ -14,7 +15,6 @@ var course;
 var url;
 var course1;
 var access_token;
-
 
 
 function discussions(guild, channel) {
@@ -69,13 +69,9 @@ function discussions(guild, channel) {
 
 function announcements(guild, channel) {
 
- 
-
   getAnnouncements();
 
-
   async function getAnnouncements() {
-
 
       updateChannelID(guild, channel);
 
@@ -104,7 +100,6 @@ function announcements(guild, channel) {
                           "Authorization": `Bot ${config.TOKEN}`,
                           Accept: "application/json",
                           "Content-Type": "application/json",
-
                       },
                       
                       body: JSON.stringify({
@@ -123,17 +118,12 @@ function announcements(guild, channel) {
       }
 
       clearData();
-  }
-
-
-  
+  } 
 }
-
 
 function assignments(guild, channel) {
   
   getAssignments();
-
 
   async function getAssignments() {
       updateChannelID(guild, channel);
@@ -154,8 +144,6 @@ function assignments(guild, channel) {
 
           console.log(apiData);
           
-
-
           for (assignments of apiData) {
               const string = [`\`\`\`Name:   ${assignments.name}`, `Description:\n ${assignments.description}`, `Due Date:  ${assignments.due_at}\n\`\`\``];
               const res2 = await fetch(
@@ -175,7 +163,6 @@ function assignments(guild, channel) {
                   }
               );
 
-
               const apiResponse = await res2.json();
               console.log(apiResponse);
           }
@@ -184,11 +171,57 @@ function assignments(guild, channel) {
       }
 
       clearData();
-
   }
-  
 }
 
+function files(guild, channel) {
+
+    getNewFiles();
+    async function getNewFiles() {
+
+        updateChannelID(guild, channel);
+
+        try {
+
+            await getRecord({ guild_id: `${guild}` }, getFetchData);
+
+            const res1 = await fetch(url + `/courses/${course}/files?sort=updated_at`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${access_token}`,
+                    "Content-Type": "application/json",
+                },
+            });
+
+            const apiData = await res1.json();
+            console.log(apiData);
+            
+            for (files of apiData) {
+                const string = [`\`\`\`File Name: ${files.display_name}`, `File Type: ${files.mime_class}`, `Folder: ${files.folder_id}`, `Updated: ${files.updated_at}\n\`\`\``];
+                const res2 = await fetch(
+                    `https://discordapp.com/api/channels/${channel}/messages`, {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Bot ${config.TOKEN}`,
+                            Accept: "application/json",
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+  
+                            content: string.join('\n').replace(/(<([^>]+)>)/gi, "")
+                        }),
+                    }
+                ); 
+                const apiResponse = await res2.json();
+                console.log(apiResponse);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+  
+        clearData();
+    }
+}
 
 function getFetchData(document) {
   obj = 'course_' + document._courseid;
@@ -199,4 +232,4 @@ function getFetchData(document) {
   console.log('obj = ' + obj + '\ncourse = ' + course + '\nurl = ' + url + '\naccess_token = ' + access_token);
 }
 
-module.exports = {assignments, discussions, announcements}
+module.exports = {assignments, discussions, announcements, files}

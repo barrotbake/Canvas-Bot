@@ -1,12 +1,12 @@
 /***********************Node.js-Modules***********************/
 const Discord = require('discord.js');
-const config = require('./Data/config.json');
+const config = require('./config.json');
 const fs = require('fs');
 const {MongoClient} = require('mongodb');
 const intents = new Discord.Intents(32767)
 const client = new Discord.Client({ intents })
 
-const uri = "mongodb+srv://Alan_B:AlanBlandon@cluster0.ab9yi.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-836il4-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true"
+const uri = config.uri;
 const mongo_client = new MongoClient(uri);
 
 //This async function trys to connect to the database and calls the listDatabases function.
@@ -51,7 +51,7 @@ client.on("ready", () => {
 
 /***********************Command-JS-Files***********************/
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./Source/bot_commands/').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./bot_commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./bot_commands/${file}`);
     client.commands.set(command.name, command)
@@ -76,6 +76,9 @@ client.on("messageCreate", message => {
     }
     else if(command === 'announcements'){
         client.commands.get('announcements').execute(message, args, Discord);
+    }
+    else if(command === 'files'){
+        client.commands.get('files').execute(message, args, Discord);
     }
     else if(command === 'join'){
         client.commands.get('join').execute(message, Discord);
