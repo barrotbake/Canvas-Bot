@@ -6,7 +6,8 @@ import { SignupPage } from './pages/SignupPage'
 import { PortalPage } from './pages/PortalPage'
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
-import Footer from './components/Footer'
+import Footer from './components/footer'
+import TestPage from './pages/TestPage'
 
 let App = () => {
   return (
@@ -16,6 +17,7 @@ let App = () => {
      <Route component={ LoginPage } path="/login"></Route>
      <Route component={ SignupPage} path="/signup"></Route>
      <Route component={ PortalPage} path="/portal"></Route>
+     <Route component={ TestPage} path="/test"></Route>
      <Footer/>
    </Router>
   )
