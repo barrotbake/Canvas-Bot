@@ -7,6 +7,8 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const   {updateChannelID} = require('./dbUtil.js');
 const  {getRecord} = require('./dbUtil.js');
 const  {clearData} = require('./clear.js');
+const config = require('../Config.json');
+
 
 
 var obj;
@@ -34,6 +36,25 @@ function discussions(guild, channel) {
 
               },
           });
+          if(res1.status === 401 || res1.statusText === "Unauthorized"){
+            await fetch(
+                `https://discordapp.com/api/channels/${channel}/messages`, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bot ${config.TOKEN}`,
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+
+                    },
+                    
+                    body: JSON.stringify({
+
+                        content: "Incorrect or expired access token. Re-enter a valid one on the website."
+                    }),
+                }
+            ); 
+          }
+          const apiData = await res1.json();
           const apiData = await res1.json();
 
           for (discussions of apiData) {
@@ -56,6 +77,7 @@ function discussions(guild, channel) {
               );
 
               const apiResponse = await res2.json();
+              console.log(apiResponse);
 
           }
       } catch (err) {
@@ -85,7 +107,7 @@ function announcements(guild, channel) {
               guild_id: `${guild}`
           }, getFetchData);
 
-          const res1 = await fetch(url + `/announcements?context_codes[]=${obj}&latest_only=true`, {
+          const res1 = await fetch(url + `/announcements?context_codes[]=${obj}`, {
               method: "GET",
               headers: {
                   Authorization: `Bearer ${access_token}`,
@@ -93,10 +115,29 @@ function announcements(guild, channel) {
 
               },
           });
+          if(res1.status === 401 || res1.statusText === "Unauthorized"){
+            await fetch(
+                `https://discordapp.com/api/channels/${channel}/messages`, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bot ${config.TOKEN}`,
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+
+                    },
+                    
+                    body: JSON.stringify({
+
+                        content: "Incorrect or expired access token. Re-enter a valid one on the website."
+                    }),
+                }
+            ); 
+          }
+          const apiData = await res1.json();
           const apiData = await res1.json();
           console.log(apiData);
           for (announcements of apiData) {
-              const string = [`\`\`\`${announcements.title}\n`, `${announcements.message}\n\`\`\``];
+              const string = [`\`\`\` ${announcements.title}\n`, `${announcements.message}\n\`\`\``];
               const res2 = await fetch(
                   `https://discordapp.com/api/channels/${channel}/messages`, {
                       method: "POST",
@@ -150,6 +191,24 @@ function assignments(guild, channel) {
 
               },
           });
+          if(res1.status === 401 || res1.statusText === "Unauthorized"){
+            await fetch(
+                `https://discordapp.com/api/channels/${channel}/messages`, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bot ${config.TOKEN}`,
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+
+                    },
+                    
+                    body: JSON.stringify({
+
+                        content: "Incorrect or expired access token. Re-enter a valid one on the website."
+                    }),
+                }
+            ); 
+          }
           const apiData = await res1.json();
 
           console.log(apiData);
