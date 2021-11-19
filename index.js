@@ -13,8 +13,9 @@ so there isn't information sent to the wrong servers.
 
 
 //function intervalFunc2() {
+const { request } = require('express');
 const express = require('express');
-const { assignments , announcements , discussions} = require ("./Fetch/fetchCalls.js");
+const { assignments , announcements , discussions, files} = require ("./Fetch/fetchCalls.js");
 var router = express.Router()
 var app = express();
 app.use(express.json());
@@ -25,9 +26,10 @@ app.listen(PORT);
 
         
 
-  app.all('/assignments',(request) => { assignments(request.body.guild, request.body.channel);});
+app.all('/assignments',(request) => { assignments(request.body.guild, request.body.channel);});
 app.all('/discussions',(request) => { discussions(request.body.guild, request.body.channel);});
-app.all('/announcements', (request) => {announcements(request.body.guild,request.body.channel);});
+app.all('/announcements',(request) => { announcements(request.body.guild,request.body.channel);});
+app.all('/files',(request) => { files(request.body.guild, request.body.channel)});
 
 
 

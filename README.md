@@ -12,7 +12,7 @@ Our project is essentially a Discord bot that syncs with Canvas and helps studen
 | ---------------------------------------------------------- |
 | [**@barrotbake**](https://github.com/barrotbake)           | 
 | [**@AlanBlandon**](https://github.com/AlanBlandon)         |
-| [**@Beemis**](https://github.com/Beemis)                   |
+| [**@Gage-Giovanni**](https://github.com/Gage-Giovanni)                   |
 | [**@sJaraAnd**](https://github.com/JaraAnd)                |
 | [**@ryan-broguiere**](https://github.com/ryan-broguiere)   |
 | [**@ryanwillyams**](https://github.com/ryanwillyams)       |
