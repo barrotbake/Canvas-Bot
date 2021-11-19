@@ -58,7 +58,7 @@ function discussions(guild, channel) {
           const apiData = await res1.json();
 
           for (discussions of apiData) {
-              const string = ["**TOPIC: " + discussions.title + "**", discussions.message + "\n"];
+              const string = ["**Topic: " + discussions.title + "**", discussions.message];
               const res2 = await fetch(
                   `https://discordapp.com/api/channels/${channel}/messages`, {
                       method: "POST",
@@ -133,7 +133,7 @@ function announcements(guild, channel) {
           const apiData = await res1.json();
           console.log(apiData);
           for (announcements of apiData) {
-              const string = [`\`\`\` ${announcements.title}\n`, `${announcements.message}\n\`\`\``];
+              const string = [`**${announcements.title}**`, `${announcements.message}`];
               const res2 = await fetch(
                   `https://discordapp.com/api/channels/${channel}/messages`, {
                       method: "POST",
@@ -204,7 +204,7 @@ function assignments(guild, channel) {
           console.log(apiData);
           
           for (assignments of apiData) {
-              const string = [`\`\`\`Name:   ${assignments.name}`, `Description:\n ${assignments.description}`, `Due Date:  ${assignments.due_at}\n\`\`\``];
+              const string = [`\`\`\`Name: ${assignments.name}\n`, `Description: ${assignments.description}\n`, `Due Date: ${assignments.due_at}\`\`\``];
               const res2 = await fetch(
                   `https://discordapp.com/api/channels/${channel}/messages`, {
                       method: "POST",
