@@ -14,7 +14,8 @@ let handleSubmit = (e) => {
   const createNewRequest = {
     courseId: courseID,
     zoomLink: zoomLink,
-    canvasApiToken: apiToken
+    canvasApiToken: apiToken,
+    username: "helloworld"  ,
   };
 
   axios

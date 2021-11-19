@@ -23,12 +23,15 @@ loginRoutes.route("/login/sign-up").post(function (req, response) {
 
 loginRoutes.route("/login/portal").post(function (req, response) {
   let db_connect = dbo.getDb();
-  let myobj = {
-    courseId: req.body.courseId,
-    zoomLink: req.body.zoomLink,
-    canvasApiToken: req.body.canvasApiToken,
+  const updateDoc = {
+    $set: {
+      courseId: req.body.courseId,
+      zoomLink: req.body.zoomLink,
+      canvasApiToken: req.body.canvasApiToken,
+    },
   };
-  db_connect.collection("user_info").insertOne(myobj, function (err, res) {
+
+  db_connect.collection("user_info").updateOne({ username: req.body.username }, updateDoc, function (err, res) {
     if (err) throw err;
     response.json(res);
   });
