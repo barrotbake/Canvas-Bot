@@ -15,7 +15,7 @@ let handleSubmit = (e) => {
     courseId: courseID,
     zoomLink: zoomLink,
     canvasApiToken: apiToken,
-    username: "helloworld"  ,
+    username: "localuser123"  ,
   };
 
   axios

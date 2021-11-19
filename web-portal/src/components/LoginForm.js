@@ -9,7 +9,7 @@ const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
 
   let onSubmit = e => {
-    e.preventDefault();
+    //e.preventDefault();
     const authUser = {username, password};
     console.log(authUser);  
      // When post request is sent to the create url, axios will add a new doc to the database.
