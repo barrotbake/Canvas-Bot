@@ -5,9 +5,9 @@ import { LoginPage } from './pages/LoginPage'
 import { SignupPage } from './pages/SignupPage'
 import { PortalPage } from './pages/PortalPage'
 import Navbar from './components/Navbar'
-import Landing from './components/Landing'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 import TestPage from './pages/TestPage'
+
 
 let App = () => {
   return (

@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import axios from 'axios';
+
 
 const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
 
     let handleSubmit = (e) => {
@@ -23,7 +25,8 @@ const SignupForm = () => {
       .post("http://localhost:5000/login/sign-up", createNewUser)
       .then((res) => console.log(res.data));
 
-      alert("created new user")
+      alert("created new user");      
+      history.push("/");
     }
 
     return (
