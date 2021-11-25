@@ -3,6 +3,7 @@ module.exports = {
     description: 'This command creates both text and voice channels under a newly created category.',
     execute(message, args, Discord){
 
+        //Check if the category exists in the discord server.
         const category = message.guild.channels.cache.find(c => c.name == 'STUDY SESSION' && c.type == 'GUILD_CATEGORY');
         if(category){
             message.reply("A study session has already started.");
