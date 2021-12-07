@@ -20,7 +20,7 @@ const Landing = () => {
             <p className="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Invite Canvas Bot to your server:</p>
 
             <div className="flex w-full justify-center md:justify-start sm:pb-0 fade-in h-14 space-x-10">
-              <a href="https://discord.com/api/oauth2/authorize?client_id=887960594878193725&permissions=545460846583&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer"> <button className="h-full shadow-md rounded-lg transition duration-200 middle-align ease-in-out transform bg-purple-700 text-white font-bold hover:opacity-60 px-6 hover:shadow-xl pb-0 " alt="add to server button">Add to Discord<AddCircleIcon className="ml-2"/></button></a>
+              <a href="https://discord.com/api/oauth2/authorize?client_id=887960594878193725&permissions=545460846583&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer"> <button className="h-full shadow-md rounded-lg transition duration-200 middle-align ease-in-out transform bg-purple-700 text-white font-bold hover:opacity-60 px-6 hover:shadow-xl pb-0 " alt="add to server button">Add to Discord<AddCircleIcon className="sm:ml-2"/></button></a>
 
               <a href="https://discord.com/" target="_blank" rel="noopener noreferrer"><button><img src="https://nullify.uno/assets/images/discord-button.png" className="mr-4 shadow-md rounded-lg transition duration-200 ease-in-out transform hover:opacity-60 hover:shadow-xl h-14" width="200" alt="discord button" /></button></a>
             </div>

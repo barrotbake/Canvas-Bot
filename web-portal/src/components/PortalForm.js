@@ -26,7 +26,7 @@ let handleSubmit = (e) => {
 }
 
     return (
-<div class="h-auto pb-24 bg-right bg-cover">         
+<div class="h-auto pb-24 bg-right bg-cover mt-24">         
     <div class="px-4 py-20 flex flex-col items-center justify-center slide-in-bottom">
           
         <h1 class="font-bold text-2xl flex items-center"><img src="https://iwebp.de/images/557580ece255489586f259.png" alt="logo" width ="54" height ="54" class ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"/>Canvas Bot</h1>
