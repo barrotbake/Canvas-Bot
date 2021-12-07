@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import { HomePage } from './pages/HomePage'
 import { LoginPage } from './pages/LoginPage'
 import { SignupPage } from './pages/SignupPage'
 import { PortalPage } from './pages/PortalPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import TestPage from './pages/TestPage'
+
 
 
 let App = () => {
@@ -16,8 +16,7 @@ let App = () => {
      <Route component={ HomePage } exact path="/"></Route>
      <Route component={ LoginPage } path="/login"></Route>
      <Route component={ SignupPage} path="/signup"></Route>
-     <Route component={ PortalPage} path="/portal"></Route>
-     <Route component={ TestPage} path="/test"></Route>
+     <Route component={ PortalPage} path="/portal"></Route>     
      <Footer/>
    </Router>
   )
