@@ -6,6 +6,7 @@ const {MongoClient} = require('mongodb');
 const intents = new Discord.Intents(32767)
 const client = new Discord.Client({ intents })
 
+
 const uri = config.uri;
 const mongo_client = new MongoClient(uri);
 
@@ -82,6 +83,9 @@ client.on("messageCreate", message => {
     }
     else if(command === 'join'){
         client.commands.get('join').execute(message, Discord);
+    }
+    else if(command === 'zoom'){
+        client.commands.get('zoom').execute(message, Discord);
     }
 })
 client.login(config.TOKEN);
