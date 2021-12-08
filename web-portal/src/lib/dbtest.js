@@ -40,7 +40,7 @@ let userLogin = async (userName, password) => {
 
     const user = await docs.findOne({ username: userName })
     if (!user) {
-      console.log("Account doesn't exist!")
+      alert("Account doesn't exist!")
     } else {
       if (password !== user.password) {
         console.log("Incorrect password!")
