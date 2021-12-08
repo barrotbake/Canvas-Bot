@@ -8,14 +8,30 @@ const ObjectId = require("mongodb").ObjectId;
 
 
 // This section will help you create a new doc.
-loginRoutes.route("/login/add").post(function (req, response) {
+loginRoutes.route("/login/sign-up").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
     email: req.body.email,
+    username: req.body.username,
     password: req.body.password,
-    canvasId: req.body.canvasId,
   };
   db_connect.collection("user_info").insertOne(myobj, function (err, res) {
+    if (err) throw err;
+    response.json(res);
+  });
+});
+
+loginRoutes.route("/login/portal").post(function (req, response) {
+  let db_connect = dbo.getDb();
+  const updateDoc = {
+    $set: {
+      courseId: req.body.courseId,
+      zoomLink: req.body.zoomLink,
+      canvasApiToken: req.body.canvasApiToken,
+    },
+  };
+
+  db_connect.collection("user_info").updateOne({ username: req.body.username }, updateDoc, function (err, res) {
     if (err) throw err;
     response.json(res);
   });

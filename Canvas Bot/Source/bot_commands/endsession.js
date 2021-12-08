@@ -8,6 +8,8 @@ module.exports = {
         const voiceChannel1 = message.guild.channels.cache.find(c => c.name == 'study-room-1' && c.type == 'GUILD_VOICE');
         const voiceChannel2 = message.guild.channels.cache.find(c => c.name == 'study-room-2' && c.type == 'GUILD_VOICE');
         const voiceChannel3 = message.guild.channels.cache.find(c => c.name == 'study-room-3' && c.type == 'GUILD_VOICE');
+        
+        //Check if the category exists in the discord server.
         if (!category) {
             message.reply("There isn't a study session at the moment. You can create one by using the `&studysession` command.");
         }
