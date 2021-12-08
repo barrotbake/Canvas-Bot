@@ -6,7 +6,7 @@ const {MongoClient} = require('mongodb');
 const intents = new Discord.Intents(32767)
 const client = new Discord.Client({ intents })
 
-const uri = "mongodb+srv://Alan_B:AlanBlandon@cluster0.ab9yi.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-836il4-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true"
+const uri = "uri"
 const mongo_client = new MongoClient(uri);
 
 //This async function trys to connect to the database and calls the listDatabases function.
@@ -79,6 +79,9 @@ client.on("messageCreate", message => {
     }
     else if(command === 'join'){
         client.commands.get('join').execute(message, Discord);
+    }
+    else if(command === 'zoom'){
+        client.commands.get('zoom').execute(message, Discord);
     }
 })
 client.login(config.TOKEN);
