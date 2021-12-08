@@ -10,11 +10,11 @@ const mobileMenu = document.querySelector(".mobileMenu")
 
 
 function authenticateUser (username, password) {
-    if (username === 'testuser123' && password === 'password') {
+    if (username === 'localuser123' && password === 'password123') {
       return {
-        username: 'testuser123',
-        email: 'tester123@gmail.com',
-        password: 'password'
+        username: 'localuser123',
+        email: 'localuser123@gmail.com',
+        password: 'password123'
       }
     }
   

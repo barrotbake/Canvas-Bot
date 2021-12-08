@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@mui/material/Button'
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const Landing = () => {
   const patterns = {
@@ -11,25 +11,27 @@ const Landing = () => {
   }
   return (
     <div className='landing'>
-      <div class="h-auto pb-24 bg-rightP bg-cover">
-        <div className="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div class="h-auto pb-24 bg-right bg-cover">
+        <div className="container pt-20 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center ">
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
             <h1 className="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">Discord Bot Integrated with Canvas API</h1>
             <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Our app is a Discord Bot that syncs with Canvas and helps students keep track of ongoing assignments, announcements, exams, and Zoom meetings. </p>
 
             <p className="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Invite Canvas Bot to your server:</p>
 
-            <div className="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
-              <a href="https://discord.com/api/oauth2/authorize?client_id=887960594878193725&permissions=545460846583&scope=bot%20applications.commands"> <button className="h-full mr-4 shadow rounded-lg  transition duration-200 middle-align ease-in-out transform bg-purple-800 text-white font-bold hover:-translate-y-1 px-8 hover:shadow-lg " alt="add to server button a">Add to Discord</button></a>
+            <div className="flex w-full justify-center md:justify-start sm:pb-0 fade-in h-14 space-x-10">
+              <a href="https://discord.com/api/oauth2/authorize?client_id=887960594878193725&permissions=545460846583&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer"> <button className="h-full shadow-md rounded-lg transition duration-200 middle-align ease-in-out transform bg-purple-700 text-white font-bold hover:opacity-60 px-6 hover:shadow-xl pb-0 " alt="add to server button">Add to Discord<AddCircleIcon className="sm:ml-2"/></button></a>
 
-              <img src="https://nullify.uno/assets/images/discord-button.png" className="h-12 mr-4 shadow rounded-lg transition duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-lg" alt="discord button" />
+              <a href="https://discord.com/" target="_blank" rel="noopener noreferrer"><button><img src="https://nullify.uno/assets/images/discord-button.png" className="mr-4 shadow-md rounded-lg transition duration-200 ease-in-out transform hover:opacity-60 hover:shadow-xl h-14" width="200" alt="discord button" /></button></a>
             </div>
           </div>
 
           {/* <!--Right Col--> */}
-          <div className="w-full xl:w-3/5 py-6 slide-in-bottom overflow-y-hidden">
-            <img className="w-5/6 mx-auto lg:mr-0" src="https://raw.githubusercontent.com/tailwindtoolbox/App-Landing-Page/master/devices.svg" alt="devices" />
-          </div>
+          <a href="https://github.com/barrotbake/Canvas-Bot" target="_blank" rel="noopener noreferrer" className=" xl:w-3/5 py-6 slide-in-bottom overflow-x-hidden overflow-y-hidden bg-contain">
+          <button className="h-full">            
+            <img className="bg-contain lg:ml-16 w-11/12 mx-auto lg:mr-0 shadow-xl border-4 rounded-xl border-purple-600 hover:opacity-60 transition duration-300" src="images/project flowchart.png" alt="workflow" />
+          </button>         
+          </a>
 
         </div>
       </div>
