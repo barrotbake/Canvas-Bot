@@ -6,8 +6,8 @@ module.exports = {
         const update = require('../main.js');
         const {MongoClient} = require('mongodb');
 
-        const uri = "uri";
-        const mongo_client =  new MongoClient(uri);
+        
+        const mongo_client =  new MongoClient(process.env.uri);
         await mongo_client.connect();
         const database =  mongo_client.db("Users");
     const docs = database.collection("user_info");
@@ -23,7 +23,7 @@ module.exports = {
                 `https://discordapp.com/api/channels/${channel}/messages`, {
                     method: "POST",
                     headers: {
-                        "Authorization": `Bot ${config.TOKEN}`,
+                        "Authorization": `Bot ${process.env.TOKEN}`,
                         Accept: "application/json",
                         "Content-Type": "application/json",
     
