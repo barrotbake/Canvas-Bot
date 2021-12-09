@@ -8,7 +8,7 @@ const config = require('../Config.json');
 const  {updateChannelID} = require('./dbUtil.js');
 const  {getRecord} = require('./dbUtil.js');
 const  {clearData} = require('./clear.js');
-const config = require('../Config.json');
+
 
 
 
