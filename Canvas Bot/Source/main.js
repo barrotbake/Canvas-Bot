@@ -5,9 +5,7 @@ const {MongoClient} = require('mongodb');
 const intents = new Discord.Intents(32767)
 const client = new Discord.Client({ intents })
 
-
-const uri = process.env.uri;
-const mongo_client = new MongoClient(uri);
+const mongo_client = new MongoClient(process.env.uri);
 
 //This async function trys to connect to the database and calls the listDatabases function.
 async function main(){
