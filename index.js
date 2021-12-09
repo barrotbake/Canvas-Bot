@@ -19,7 +19,7 @@ const { assignments , announcements , discussions, files} = require ("./Fetch/fe
 var router = express.Router()
 var app = express();
 app.use(express.json());
-const PORT = 8080;
+var PORT = process.env.PORT || 8080;
 app.listen(PORT);
 
 
