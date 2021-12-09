@@ -3,7 +3,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const Landing = () => {
   const patterns = {
-    flexRow: "container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-col ",
+    flexRow: "container mt-6 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-col ",
 
     subHeading: "my-4 text-4xl md:text-4xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1 max-w-sm ",
 
@@ -38,11 +38,13 @@ const Landing = () => {
       {/* announcements section */}
       <div className={patterns.flexRow}>
         <h1 className={patterns.subHeading}>Never miss a class announcement again</h1>
-        <p className={patterns.bodyText}>Don't want to bounce around emails and web pages to find the latest updates from class? You can now get all recent announcements.</p>
+        <p className={patterns.bodyText}>Don't want to bounce around emails and web pages to find the latest updates from class? You can now get all recent announcements.</p>        
+        <img className="w-3/5 object-contain object-right-top border-2 border-purple-600 rounded-lg" src="https://media.discordapp.net/attachments/918467513661161472/918468086204604416/Screenshot_2021-12-09_034340.png"/>
+        
       </div>
 
       {/* assignments section */}
-      <div className={patterns.flexRow + "content-end"}>
+      <div className={patterns.flexRow + "flex items-end"}>
         <h1 className={patterns.subHeading}>Find assignments and files easily</h1>
         <p className={patterns.bodyText}>Simplify finding assignments and associated files by using !assignments. You can now get any file uploaded to your class on demand.</p>
       </div>
