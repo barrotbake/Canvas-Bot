@@ -55,7 +55,7 @@ function discussions(guild, channel) {
             ); 
           }
           const apiData = await res1.json();
-          const apiData = await res1.json();
+          
 
           for (discussions of apiData) {
               const string = ["**Topic: " + discussions.title + "**", discussions.message];
@@ -130,7 +130,7 @@ function announcements(guild, channel) {
             ); 
           }
           const apiData = await res1.json();
-          const apiData = await res1.json();
+          
           console.log(apiData);
           for (announcements of apiData) {
               const string = [`**${announcements.title}**`, `${announcements.message}`];
