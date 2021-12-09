@@ -3,7 +3,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const Landing = () => {
   const patterns = {
-    flexRow: "container mt-6 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-col ",
+    flexRow: "container mt-6 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center ",
 
     subHeading: "my-4 text-4xl md:text-4xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1 max-w-sm ",
 
@@ -37,22 +37,34 @@ const Landing = () => {
       </div>
       {/* announcements section */}
       <div className={patterns.flexRow}>
+      <div className="flex flex-col w-full xl:w-2/5 justify-center items-center lg:items-start overflow-y-hidden">
         <h1 className={patterns.subHeading}>Never miss a class announcement again</h1>
-        <p className={patterns.bodyText}>Don't want to bounce around emails and web pages to find the latest updates from class? You can now get all recent announcements.</p>        
-        <img className="w-3/5 object-contain object-right-top border-2 border-purple-600 rounded-lg" src="https://media.discordapp.net/attachments/918467513661161472/918468086204604416/Screenshot_2021-12-09_034340.png"/>
+        <p className={patterns.bodyText}>Don't want to bounce around emails and web pages to find the latest updates from class? You can now get all recent announcements.</p>
+      </div>        
+        <img className="w-full xl:w-3/5 border-2 border-purple-600 rounded-lg slide-in-bottom" src="https://media.discordapp.net/attachments/918467513661161472/918468086204604416/Screenshot_2021-12-09_034340.png" alt="announcements demo"/>
         
       </div>
 
-      {/* assignments section */}
-      <div className={patterns.flexRow + "flex items-end"}>
+      {/* assignments section */}      
+      <div className={patterns.flexRow}>
+      <div className="flex flex-col w-full xl:w-2/5 items-center overflow-y-hidden md:hidden">  
         <h1 className={patterns.subHeading}>Find assignments and files easily</h1>
         <p className={patterns.bodyText}>Simplify finding assignments and associated files by using !assignments. You can now get any file uploaded to your class on demand.</p>
+      </div>
+      <img className="w-full xl:w-3/5 border-2 border-purple-600 rounded-lg slide-in-bottom" src="https://media.discordapp.net/attachments/918467513661161472/918468086565318666/Screenshot_2021-12-09_034403.png" alt="assignments demo"/>
+      <div className="hidden md:flex flex-col w-full xl:w-2/5 justify-end lg:items-end overflow-y-hidden">  
+        <h1 className={patterns.subHeading}>Find assignments and files easily</h1>
+        <p className={patterns.bodyText}>Simplify finding assignments and associated files by using !assignments. You can now get any file uploaded to your class on demand.</p>
+      </div>
+        
       </div>
 
         {/* zoom section */}
         <div className={patterns.flexRow}>
-        <h1 className={patterns.subHeading}>Jump into class from Discord</h1>
-        <p className={patterns.bodyText}>Automate the way you get to class. Canvas Bot sends out a reminder and a link to class a couple minutes before class starts.</p>
+        <div className="flex flex-col w-full xl:w-2/5 justify-center items-center lg:items-start overflow-y-hidden">
+          <h1 className={patterns.subHeading}>Jump into class from Discord</h1>
+          <p className={patterns.bodyText}>Automate the way you get to class. Canvas Bot sends out a reminder and a link to class a couple minutes before class starts.</p>
+        </div>
       </div>
     </div>
   )

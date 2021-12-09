@@ -12,20 +12,23 @@ const Navbar = () => {
 		
 		<nav className="items-center space-x-3 flex-shrink-0 hidden md:flex">
         <Link to ='/login' className ="loginNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
-        <img src="images/Log In.PNG" height = "80" width = "80" class = "rounded" alt="login button"/>		        
+        <img src="images/Log In.PNG" height = "80" width = "80" className = "rounded" alt="login button"/>		        
         </Link>
         <Link to ='/signup' className ="signupNav text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">          
-        <img src="images/Sign Up.PNG" height = "80" width = "80" class = "rounded" alt="signup button"/>		        
+        <img src="images/Sign Up.PNG" height = "80" width = "80" className = "rounded" alt="signup button"/>		        
         </Link>
         <Link to ='/portal' className ="text-indigo-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-gray-300 rounded-full shadow-lg bg-white">        
-        <img src="images/Portal.PNG" height = "80" width = "80" class = "rounded" alt="portal button"/>		        
+        <img src="images/Portal.PNG" height = "80" width = "80" className = "rounded" alt="portal button"/>		        
+        </Link>
+        <Link to ='/portal' className ="text-indigo-400 text-base transform duration-500 hover:scale-110 hover:shadow-xl px-2 border-2 border-gray-300 rounded-full shadow-lg bg-white"> About        
+        <img src="https://img.icons8.com/nolan/64/info.png" height = "42" width = "42" className = "rounded inline mb-1" alt="about icon"/>		        
         </Link>
         <Link to ='/' className ="logoutNav hidden text-red-400 text-xl transform duration-500 hover:scale-110 hover:shadow-xl px-2 py-1 border-2 border-indigo-300 rounded-full shadow-lg bg-white">          
-        <img src="images/Log Out.PNG" height = "80" width = "80" class = "rounded" alt="logout button"/>		        
+        <img src="images/Log Out.PNG" height = "80" width = "80" className = "rounded" alt="logout button"/>		        
         </Link>    
 		</nav>
 		<div className = "md:hidden">
-      <button id="mobileButton" class="md:hidden flex ml-2">
+      <button id="mobileButton" className="md:hidden flex ml-2">
         <img src="https://img.icons8.com/nolan/64/menu.png" alt="mobile button"/>
       </button>
 
