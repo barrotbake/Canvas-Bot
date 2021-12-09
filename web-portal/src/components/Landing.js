@@ -11,7 +11,7 @@ const Landing = () => {
   }
   return (
     <div className='landing'>
-      <div class="h-auto pb-24 bg-right bg-cover">
+      <div className="h-auto pb-24 bg-right bg-cover">
         <div className="container pt-20 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center ">
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
             <h1 className="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">Discord Bot Integrated with Canvas API</h1>

@@ -44,7 +44,7 @@ const SignupForm = () => {
     <button type="submit" className="flex items-center justify-center h-12 px-6 w-64 bg-blue-400 mt-8 rounded-xl font-semibold text-md text-white hover:bg-blue-700 hover:shadow-xl transition duration-700 ease-in-out transform hover:-translate-y-2 hover:scale-105">Create Account</button>
     <div className="flex mt-6 justify-center text-xs">
       Already have an account?
-      <Link to ='/login' classNameName="text-blue-400 hover:text-blue-600 hover:underline ml-1 loginButton"> Log in </Link>
+      <Link to ='/login' className="text-blue-400 hover:text-blue-600 hover:underline ml-1 loginButton"> Log in </Link>
     </div>
   </form>
 </div>
