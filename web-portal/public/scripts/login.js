@@ -10,36 +10,36 @@ const mobileMenu = document.querySelector(".mobileMenu")
 
 
 function authenticateUser (username, password) {
-    if (username === 'testuser123' && password === 'password') {
+    if (username === 'localuser123' && password === 'password123') {
       return {
-        username: 'testuser123',
-        email: 'tester123@gmail.com',
-        password: 'password'
+        username: 'localuser123',
+        email: 'localuser123@gmail.com',
+        password: 'password123'
       }
     }
   
   }
 
-if (loginButton != null){
-loginButton.addEventListener('click', (e)=> {
+// if (loginButton != null){
+// loginButton.addEventListener('click', (e)=> {
     
-    let testUser = authenticateUser((inputUsername.value),inputPassword.value);
+//     let testUser = authenticateUser((inputUsername.value),inputPassword.value);
 
-    if (testUser!=null)
-    {
-        //e.preventDefault()
-        alert(`Login successful \n\nWelcome ${testUser.username}`)
-        localStorage.setItem('profile', JSON.stringify(testUser))
-        localStorage.setItem('loggedin', 'true')
-        window.location.href="/"
-    }
-    else
-    {
-        e.preventDefault()
-        alert('Login failed. \n\nUsername or password not recognized in the system')
-    }
-})
-}
+//     if (testUser!=null)
+//     {
+//         //e.preventDefault()
+//         alert(`Login successful \n\nWelcome ${testUser.username}`)
+//         localStorage.setItem('profile', JSON.stringify(testUser))
+//         localStorage.setItem('loggedin', 'true')
+//         window.location.href="/"
+//     }
+//     else
+//     {
+//         e.preventDefault()
+//         alert('Login failed. \n\nUsername or password not recognized in the system')
+//     }
+// })
+// }
 
 if(localStorage.getItem('loggedin') === 'true')
 {

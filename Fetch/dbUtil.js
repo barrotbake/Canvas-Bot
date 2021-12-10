@@ -1,8 +1,8 @@
 const  {MongoClient} = require ('mongodb');
 const config = require('../Config.json');
 
-const uri = config.uri;
-const client = new MongoClient(uri);
+
+const client = new MongoClient(process.env.uri);
 
 
 

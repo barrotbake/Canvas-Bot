@@ -1,13 +1,11 @@
 /***********************Node.js-Modules***********************/
 const Discord = require('discord.js');
-const config = require('./config.json');
 const fs = require('fs');
 const {MongoClient} = require('mongodb');
 const intents = new Discord.Intents(32767)
 const client = new Discord.Client({ intents })
 
-const uri = config.uri;
-const mongo_client = new MongoClient(uri);
+const mongo_client = new MongoClient(process.env.uri);
 
 //This async function trys to connect to the database and calls the listDatabases function.
 async function main(){
@@ -83,8 +81,11 @@ client.on("messageCreate", message => {
     else if(command === 'join'){
         client.commands.get('join').execute(message, Discord);
     }
+    else if(command === 'zoom'){
+        client.commands.get('zoom').execute(message, Discord);
+    }
 })
-client.login(config.TOKEN);
+client.login(process.env.TOKEN);
 
 //These functions are exported so that they can be used in the files regarding the commands.
 exports.updateListing = updateListing;
