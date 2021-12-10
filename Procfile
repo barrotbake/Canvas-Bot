@@ -1,2 +1,2 @@
 web: node index.js
-serve -s web-portal/build/
+web: serve -s web-portal/build/
