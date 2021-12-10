@@ -60,7 +60,10 @@ client.on("messageCreate", message => {
     if(!message.content.startsWith(config.prefix) || message.author.bot) return;
     const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    if(command === 'studysession'){
+    if(command === 'help'){
+        client.commands.get('help').execute(message, args, Discord);
+    }
+    else if(command === 'studysession'){
         client.commands.get('studysession').execute(message, args, Discord);
     }
     else if(command === 'endsession'){
