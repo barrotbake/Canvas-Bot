@@ -2,11 +2,9 @@ module.exports = {
     name: 'join',
     execute(message, Discord){
         const update = require('../main.js');
-        const config = require('../Data/config.json');
         const {MongoClient} = require('mongodb');
 
-        const uri = config.uri
-        const mongo_client = new MongoClient(uri);
+        const mongo_client = new MongoClient(process.env.uri);
 
         const args = message.content.split(/ +/);
         var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;

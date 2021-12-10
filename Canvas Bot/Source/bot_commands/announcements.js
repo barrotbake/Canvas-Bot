@@ -2,11 +2,9 @@ module.exports = {
     name: 'announcements',
     execute(message, args, Discord){
         const update = require('../main.js');
-        const config = require('../Data/config.json');
         const {MongoClient} = require('mongodb');
 
-        const uri = "uri"
-        const mongo_client = new MongoClient(uri);
+        const mongo_client = new MongoClient(process.env.uri);
         
         const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
         let server = message.guild.id;
@@ -14,7 +12,7 @@ module.exports = {
         let discord_id = {"guild": `${server}`, "channel": `${channel}`}
 
         update.updateListing(mongo_client, String(server), { guild_id: server });
-        fetch(`http://${config.IP}:${config.Port}/announcements`, {
+        fetch(`https://canvasbotapi.herokuapp.com/announcements`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
