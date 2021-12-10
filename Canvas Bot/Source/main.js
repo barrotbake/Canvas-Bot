@@ -49,7 +49,7 @@ client.on("ready", () => {
 
 /***********************Command-JS-Files***********************/
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./bot_commands/').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('Canvas Bot/Source/bot_commands').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./bot_commands/${file}`);
     client.commands.set(command.name, command)
@@ -57,15 +57,18 @@ for(const file of commandFiles){
 
 /***********************Command-Handler***********************/
 client.on("messageCreate", message => {
-    if(!message.content.startsWith(config.prefix) || message.author.bot) return;
-    const args = message.content.slice(config.prefix.length).split(/ +/);
+    if(!message.content.startsWith(process.env.prefix) || message.author.bot) return;
+    const args = message.content.slice(process.env.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    if(command === 'help'){
-        client.commands.get('help').execute(message, args, Discord);
-    }
-    else if(command === 'studysession'){
+    if(command === 'studysession'){
         client.commands.get('studysession').execute(message, args, Discord);
     }
+    else if(command === 'quote'){
+        client.commands.get('quote').execute(message, args, Discord);
+}
+    else if(command === 'help'){
+        client.commands.get('help').execute(message, args, Discord);
+}
     else if(command === 'endsession'){
         client.commands.get('endsession').execute(message, args, Discord);
     }
