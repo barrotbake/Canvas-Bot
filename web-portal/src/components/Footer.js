@@ -1,5 +1,5 @@
 import React from 'react';
-//import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -18,30 +18,24 @@ const Footer = () => {
 				<h3 className="tracking-wide uppercase font-semibold">Product</h3>
 				<ul className="space-y-1">
 					<li>
-						<a className="hover:underline" href="/">Features</a>
-					</li>
+						<a className="hover:underline" href="/#features">Features</a>
+					</li>					
 					<li>
-						<a className="hover:underline" href="/">Integrations</a>
-					</li>
-					<li>
-						<a className="hover:underline" href="/">Documentation</a>
-					</li>
-					<li>
-						<a className="hover:underline" href="/">FAQ</a>
-					</li>
+						<Link to ="/about" className="hover:underline">Documentation</Link>
+					</li>					
 				</ul>
 			</div>
 			<div className="space-y-3">
 				<h3 className="tracking-wide uppercase font-semibold">Developers</h3>
 				<ul className="space-y-1">
 					<li>
-						<a className="hover:underline" href="/">About Us</a>
+						<Link to="/about" className="hover:underline">About Us</Link>
 					</li>
 					<li>
-						<a className="hover:underline" href="/">Contact</a>
+						<a className="hover:underline" href="https://github.com/barrotbake/Canvas-Bot">Contact</a>
 					</li>
 					<li>
-						<a className="hover:underline" href="/">Terms of Service</a>
+						<a className="hover:underline" href="https://www.gnu.org/licenses/gpl-3.0.en.html">Terms of Service</a>
 					</li>
 				</ul>
 			</div>
@@ -49,13 +43,13 @@ const Footer = () => {
 				<h3 className="tracking-wide uppercase font-semibold">Resources</h3>
 				<ul className="space-y-1">
 					<li>
-						<a className="hover:underline" href="/">Canvas API</a>
+						<a className="hover:underline" href="https://canvas.instructure.com/doc/api/all_resources.html">Canvas API</a>
 					</li>
 					<li>
-						<a className="hover:underline" href="/">Discord Bots</a>
+						<a className="hover:underline" href="https://discord.bots.gg/">Discord Bots</a>
 					</li>
 					<li>
-						<a className="hover:underline" href="/">Guides</a>
+						<a className="hover:underline" href="https://discordjs.guide/#before-you-begin">Guides</a>
 					</li>
 				</ul>
 			</div>

@@ -36,6 +36,7 @@ const Landing = () => {
         </div>
       </div>
       {/* announcements section */}
+      <section id="features">
       <div className={patterns.flexRow}>
       <div className="flex flex-col w-full xl:w-2/5 justify-center items-center lg:items-start overflow-y-hidden">
         <h1 className={patterns.subHeading}>Never miss a class announcement again</h1>
@@ -67,6 +68,7 @@ const Landing = () => {
         </div>
         <img className="w-full xl:w-3/5 border-2 border-purple-600 rounded-lg slide-in-bottom" src="https://media.discordapp.net/attachments/887972221178503223/918689157776281600/unknown.png" alt="zoom demo"/>
       </div>
+      </section>
     </div>
   )
 }

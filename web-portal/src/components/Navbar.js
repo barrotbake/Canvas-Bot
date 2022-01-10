@@ -37,7 +37,7 @@ const Navbar = () => {
         <Link to ='/signup' className="block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md"><img className="float-left inline-block w-6" src="https://img.icons8.com/nolan/64/create-new.png" alt="mobile signup"/> Signup </Link>
         <Link to ='/portal' className="block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md"><img className="float-left inline-block w-6" src="https://img.icons8.com/nolan/64/user-credentials.png" alt="mobile portal"/> Portal</Link>
         <Link to ='/about' className="block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md"><img className="float-left inline-block w-6" src="https://img.icons8.com/nolan/64/info.png" alt="mobile portal"/> About</Link>
-        <Link to ='/' className="logoutNav block px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md"><img className="float-left inline-block w-6" src="https://img.icons8.com/nolan/64/shutdown.png" alt="mobile logout"/> Log Out</Link>
+        <Link to ='/' className="logoutNav hidden px-2 py-2 text-center bg-white text-indigo-400 border border-indigo-200 hover:bg-blue-400 hover:text-white rounded-md"><img className="float-left inline-block w-6" src="https://img.icons8.com/nolan/64/shutdown.png" alt="mobile logout"/> Log Out</Link>
       </div>
     </div>
 	</div>
