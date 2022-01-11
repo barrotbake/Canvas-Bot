@@ -90,12 +90,12 @@ export let AboutPage = () => {
             <span className="relative text-gray-600">Contributors</span>                   
         </h2>       
         <ul>
-            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/ryan-broguiere">@ryan-broguiere</a></li>
-            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/barrotbake">@barrotbake</a></li>
-            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/AlanBlandon">@AlanBlandon</a></li>
-            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/ryanwillyams">@ryanwillyams</a></li>
-            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/Gage-Giovanni">@Gage-Giovanni</a></li>
-            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/JaraAnd">@sJaraAnd</a></li>
+            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/ryan-broguiere" target="_blank" rel="noopener noreferrer">@ryan-broguiere</a></li>
+            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/barrotbake" target="_blank" rel="noopener noreferrer">@barrotbake</a></li>
+            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/AlanBlandon" target="_blank" rel="noopener noreferrer">@AlanBlandon</a></li>
+            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/ryanwillyams" target="_blank" rel="noopener noreferrer">@ryanwillyams</a></li>
+            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/Gage-Giovanni" target="_blank" rel="noopener noreferrer">@Gage-Giovanni</a></li>
+            <li className="text-blue-500"><a className="hover:underline" href="https://github.com/JaraAnd" target="_blank" rel="noopener noreferrer">@sJaraAnd</a></li>
         </ul>
         </div>
     </div>

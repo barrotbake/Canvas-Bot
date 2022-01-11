@@ -32,10 +32,10 @@ const Footer = () => {
 						<Link to="/about" className="hover:underline">About Us</Link>
 					</li>
 					<li>
-						<a className="hover:underline" href="https://github.com/barrotbake/Canvas-Bot">Contact</a>
+						<a className="hover:underline" href="https://github.com/barrotbake/Canvas-Bot" target="_blank" rel="noopener noreferrer">Contact</a>
 					</li>
 					<li>
-						<a className="hover:underline" href="https://www.gnu.org/licenses/gpl-3.0.en.html">Terms of Service</a>
+						<a className="hover:underline" href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
 					</li>
 				</ul>
 			</div>
@@ -43,13 +43,13 @@ const Footer = () => {
 				<h3 className="tracking-wide uppercase font-semibold">Resources</h3>
 				<ul className="space-y-1">
 					<li>
-						<a className="hover:underline" href="https://canvas.instructure.com/doc/api/all_resources.html">Canvas API</a>
+						<a className="hover:underline" href="https://canvas.instructure.com/doc/api/all_resources.html" target="_blank" rel="noopener noreferrer">Canvas API</a>
 					</li>
 					<li>
-						<a className="hover:underline" href="https://discord.bots.gg/">Discord Bots</a>
+						<a className="hover:underline" href="https://discord.bots.gg/" target="_blank" rel="noopener noreferrer">Discord Bots</a>
 					</li>
 					<li>
-						<a className="hover:underline" href="https://discordjs.guide/#before-you-begin">Guides</a>
+						<a className="hover:underline" href="https://discordjs.guide/#before-you-begin" target="_blank" rel="noopener noreferrer">Guides</a>
 					</li>
 				</ul>
 			</div>
