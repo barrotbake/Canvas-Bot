@@ -23,7 +23,7 @@ const [password, setPassword] = useState('');
     return (
 <div className="h-auto pb-24 bg-right bg-cover mt-32"> 
 <div className = "flex flex-col items-center justify-center slide-in-bottom" id="showLogin">
-<h1 className="font-bold text-2xl flex items-center"><img src="https://iwebp.de/images/557580ece255489586f259.png" alt="logo" width ="54" height ="54" className ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"/>Canvas Bot</h1>
+<h1 className="font-bold text-2xl flex items-center"><img src="images/discord logo.png" alt="discord logo" width ="54" height ="54" className ="px-2 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"/>Canvas Bot</h1>
   <form className="flex flex-col bg-white border-2 rounded-lg shadow-lg p-12 mt-5">
   <h1 className="mb-5 text-xl font-light text-left sm:text-center">Log in to your account</h1>
   <label className="font-semibold text-xs" htmlFor="username">Username</label>

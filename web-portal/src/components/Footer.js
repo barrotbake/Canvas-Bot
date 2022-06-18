@@ -8,8 +8,8 @@ const Footer = () => {
 	<div className="container flex flex-col justify-between px-6 py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 	 <div className="flex justify-center lg:justify-start lg:w-1/3">			
 		<div className="flex items-center justify-center h-12 lg:justify-start">
-        <img src="https://iwebp.de/images/557580ece255489586f259.png" width ="40" height ="40" className ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" alt="logo"/>
-        <span className="self-center text-2xl text-indigo-300 font-semibold">Canvas Bot</span>
+        <img src="images/discord logo.png" width ="40" height ="40" className ="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" alt="discord logo"/>
+        <span className="self-center text-2xl text-indigo-300 font-semibold ml-1">Canvas Bot</span>
 		</div>				
 			
 	 </div>

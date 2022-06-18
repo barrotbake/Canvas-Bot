@@ -7,7 +7,7 @@ const Navbar = () => {
 <header className="mb-4 p-1 border-gray-300 border-b border-opacity-80 bg-white fixed top-0 w-full z-10">
 	<div className="container flex justify-between h-16 mx-auto">
       <Link to = '/' className = "flex items-center text-purple-600 no-underline hover:no-underline leading-tight font-bold text-xl lg:text-3xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-         <img src="https://iwebp.de/images/557580ece255489586f259.png" width ="54" height ="54" className="mr-1" alt="logo"/>Canvas Bot
+         <img src="images/discord logo.png" width ="54" height ="54" className="mr-1" alt="discord logo"/>Canvas Bot
       </Link>
 		
 		<nav className="items-center space-x-3 flex-shrink-0 hidden md:flex">
